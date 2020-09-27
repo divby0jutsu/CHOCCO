@@ -12,7 +12,7 @@ $darkGreen: #0b4d3c;
 
 
 // setup
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;700;800&display=swap');
 
 @import "./layout";
 
@@ -28,3 +28,6 @@ $darkGreen: #0b4d3c;
 @import "./components/headline";
 @import "./components/benefits";
 @import "./components/benefit";
+@import "./components/review";
+@import "./components/reviews";
+@import "./components/interactive-avatar";

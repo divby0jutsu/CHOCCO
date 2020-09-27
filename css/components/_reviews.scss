@@ -1,0 +1,36 @@
+.reviews-section {
+  background: url("../../img/decor/strawberry.png") right 4% top 8% no-repeat;
+  position: relative;
+
+  &::before {
+    content: url("../../img/decor/leaf-grey-2.png");
+    position: absolute;
+    left: 0;
+    bottom: -166px;
+  }
+
+  &::after {
+    content: url("../../img/decor/berries.png");
+    position: absolute;
+    left: 0;
+    bottom: -90px;
+  }
+
+}
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews__switch {
+  display: flex;
+}
+
+.reviews__switch-item {
+  margin-right: 6px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
