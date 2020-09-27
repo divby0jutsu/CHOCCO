@@ -4,7 +4,7 @@ $baseFontSize: 18px;
 //colors
 
 $lightBlue: #61c4d9;
-$darkGreen: #0b4d3c;
+$darkGreen: #365A49;
 
 
 // normalize.css
@@ -31,3 +31,6 @@ $darkGreen: #0b4d3c;
 @import "./components/review";
 @import "./components/reviews";
 @import "./components/interactive-avatar";
+@import "./components/delivery";
+@import "./components/form";
+@import "./components/radio";

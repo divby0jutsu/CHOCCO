@@ -4,15 +4,18 @@
   padding: 50px 45px 34px;
   margin-bottom: 22px;
   position: relative;
+  overflow: hidden;
 
   &::before {
     display: block;
+    content: "";
     position: absolute;
     width: 83px;
     height: 83px;
     border-radius: 50%;
-    overflow: hidden;
-    background-color: black;
+    left: calc(50% - 45px);
+    top: -58px;
+    background-color:#fff;
   }
 }
 

@@ -155,12 +155,26 @@ img {
   border: none;
   cursor: pointer; }
   .btn--bg--white {
-    color: #0b4d3c;
+    color: #365A49;
     background: #FFF; }
+    .btn--bg--white:hover {
+      background: #365A49;
+      border-color: #365A49;
+      color: #FFF; }
   .btn--bg--green {
-    background: #0b4d3c;
-    border-color: #0b4d3c;
+    background: #365A49;
+    border-color: #365A49;
     color: #FFF; }
+    .btn--bg--green:hover {
+      color: #365A49;
+      background: #FFF; }
+  .btn--bg--transparent {
+    background: transparent;
+    color: #000;
+    font-weight: 400;
+    text-transform: none; }
+    .btn--bg--transparent:hover {
+      color: #497870; }
 
 .section {
   height: 100vh;
@@ -168,6 +182,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  .section--font-color--green {
+    color: #365A49; }
 
 .section__title {
   font-size: 48px;
@@ -258,15 +274,18 @@ img {
   background: url("../../img/decor/berries-drawing.png") right top 5% no-repeat, #F8FAF9;
   padding: 50px 45px 34px;
   margin-bottom: 22px;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .review::before {
     display: block;
+    content: "";
     position: absolute;
     width: 83px;
     height: 83px;
     border-radius: 50%;
-    overflow: hidden;
-    background-color: black; }
+    left: calc(50% - 45px);
+    top: -58px;
+    background-color: #fff; }
 
 .review__photo {
   width: 254px;
@@ -349,5 +368,90 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover; }
+
+.delivery-section {
+  background: url("../../img/bg/berries-pattern.png") left top repeat;
+  position: relative; }
+  .delivery-section::before {
+    content: url("../../img/decor/blueberry.png");
+    position: absolute;
+    left: 5%;
+    bottom: 10%; }
+  .delivery-section::after {
+    content: url("../../img/decor/leaf.png");
+    position: absolute;
+    right: 5%;
+    bottom: 10%; }
+
+.delivery-section__title {
+  color: #365A49;
+  margin-bottom: 42px; }
+
+.form {
+  display: flex; }
+
+.form__col, .form__block {
+  flex: 1;
+  margin-right: 20px; }
+  .form__col:last-child, .form__block:last-child {
+    margin-right: 0; }
+
+.form__row {
+  display: flex;
+  margin-bottom: 14px; }
+
+.form__input {
+  width: 100%;
+  border: none;
+  padding: 18px 11px;
+  border-radius: 4px;
+  border: 3px solid transparent; }
+  .form__input--textarea {
+    resize: none;
+    height: 180px; }
+  .form__input:focus {
+    border-color: #DEE2BD;
+    outline: none; }
+
+.form__controls {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px; }
+
+.radio {
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 23px; }
+  .radio:last-child {
+    margin-right: 0; }
+  .radio--checkbox .radio__visible {
+    border-radius: 0; }
+    .radio--checkbox .radio__visible::before {
+      background: url("../../img/icons/checkmark.svg"); }
+
+.radio__elem {
+  display: none; }
+  .radio__elem:checked ~ .radio__visible::before {
+    display: block; }
+
+.radio__visible {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  border-radius: 50%;
+  background: #FFF;
+  margin-right: 10px; }
+  .radio__visible::before {
+    display: none;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #365A49;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=main.css.map */

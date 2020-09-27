@@ -1,0 +1,23 @@
+.delivery-section {
+  background: url('../../img/bg/berries-pattern.png') left top repeat;
+  position: relative;
+
+  &::before {
+    content: url("../../img/decor/blueberry.png");
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+  }
+
+  &::after {
+    content: url("../../img/decor/leaf.png");
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+  }
+}
+
+.delivery-section__title {
+  color: #365A49;
+  margin-bottom: 42px;
+}

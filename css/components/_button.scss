@@ -11,12 +11,32 @@
   &--bg--white {
     color: $darkGreen;
     background: #FFF;
+    &:hover {
+      background: $darkGreen;
+      border-color: $darkGreen;
+      color: #FFF;
+    }
   }
 
   &--bg--green {
     background: $darkGreen;
     border-color: $darkGreen;
     color: #FFF;
+    &:hover {
+      color: $darkGreen;
+      background: #FFF;
+    }
+  }
+
+  &--bg--transparent {
+    background: transparent;
+    color: #000;
+    font-weight: 400;
+    text-transform: none;
+
+    &:hover {
+      color: #497870;
+    }
   }
 }
 
