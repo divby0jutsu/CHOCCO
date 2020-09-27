@@ -8,6 +8,10 @@
   &--font-color--green {
     color: $darkGreen;
   }
+
+  &::before, &::after {
+    z-index: $z-section-decor;
+  }
 }
 
 .section__title {
