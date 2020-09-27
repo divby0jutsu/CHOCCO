@@ -1,0 +1,12 @@
+
+.highlights {
+    display: flex;
+}
+
+.highlights__item {
+  margin-right: 46px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

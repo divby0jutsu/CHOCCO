@@ -1,0 +1,50 @@
+.hero {
+  height: 100vh;
+  min-height: 652px;
+  color: #fff;
+  background: url("../../img/decor/large-leaf.png") right bottom no-repeat, $lightBlue;
+  position: relative;
+
+  &::before {
+    content: url("../../img/decor/leaf-decor.png");
+    position: absolute;
+    bottom: -60px;
+    left: 2%;
+  }
+
+  &::after {
+    content: url("../../img/decor/berries-and-leaves.png");
+    position: absolute;
+    bottom: -55px;
+    right: 2%;
+  }
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 24px 0 50px;
+  background: url("../../img/decor/chocco-bars.png") right center/ 54% auto no-repeat
+}
+
+.hero__text {
+  margin: 60px 0;
+  width: 40%;
+}
+
+
+.hero__title {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.hero__subtitle {
+  font-size: 21px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}

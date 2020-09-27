@@ -1,6 +1,26 @@
-@import "./layout/base";
-@import "./blocks/hero";
-@import "./blocks/header";
-@import "./blocks/menu";
-@import "./blocks/hero__text";
-@import "./blocks/button";
+$containerWidth: 940px;
+$baseFontSize: 18px;
+
+//colors
+
+$lightBlue: #61c4d9;
+$darkGreen: #0b4d3c;
+
+
+// normalize.css
+@import "./normalize.css";
+
+
+// setup
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;800&display=swap');
+
+@import "./layout";
+
+// components
+
+@import "./components/hero";
+@import "./components/header";
+@import "./components/menu";
+@import "./components/highlights";
+@import "./components/highlight";
+@import "./components/button";

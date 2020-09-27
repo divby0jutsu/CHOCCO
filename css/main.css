@@ -1,3 +1,5 @@
+@import url(./normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;800&display=swap");
 * {
   box-sizing: border-box; }
 
@@ -9,7 +11,7 @@ html, body {
 body {
   font-family: 'Alegreya Sans', 'Verdana', sans-serif;
   font-size: 18px;
-  color: #fff;
+  color: #666;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -30,71 +32,133 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: normal; }
 
+table {
+  border-collapse: collapse; }
+
 p {
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
+
+footer {
+  position: relative;
+  width: 100%; }
+
+img {
+  display: block;
+  max-width: 100%; }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-width: 960px;
   min-height: 100%;
-  overflow-x: hidden; }
+  overflow: hidden; }
 
 .container {
-  width: 1100px;
-  margin: 0 auto;
-  flex: 1; }
+  width: 940px;
+  margin: 0 auto; }
 
 .hero {
-  background: #61C4D9;
+  height: 100vh;
   min-height: 652px;
+  color: #fff;
+  background: url("../../img/decor/large-leaf.png") right bottom no-repeat, #61c4d9;
+  position: relative; }
+  .hero::before {
+    content: url("../../img/decor/leaf-decor.png");
+    position: absolute;
+    bottom: -60px;
+    left: 2%; }
+  .hero::after {
+    content: url("../../img/decor/berries-and-leaves.png");
+    position: absolute;
+    bottom: -55px;
+    right: 2%; }
+
+.hero__container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px; }
+  justify-content: space-between;
+  height: 100%;
+  padding: 24px 0 50px;
+  background: url("../../img/decor/chocco-bars.png") right center/54% auto no-repeat; }
 
-.hero__content {
+.hero__text {
+  margin: 60px 0;
   width: 40%; }
+
+.hero__title {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase; }
+
+.hero__subtitle {
+  font-size: 21px;
+  line-height: 1.2;
+  margin-bottom: 30px; }
 
 .header {
   display: flex;
   justify-content: space-between;
-  min-height: 86px;
   align-items: center; }
 
+.phone-number__link {
+  font-size: 24px;
+  display: flex;
+  align-items: center; }
+
+.phone-number__icon-pic {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px; }
+
 .menu__list {
-  display: flex; }
+  display: flex;
+  align-items: center; }
 
 .menu__item {
   margin-right: 27px; }
   .menu__item:last-child {
     margin-right: 0; }
 
-.hero__text {
-  margin-bottom: 64px; }
+.highlights {
+  display: flex; }
 
-.hero__title {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 17px;
-  text-transform: uppercase; }
+.highlights__item {
+  margin-right: 46px; }
+  .highlights__item:last-child {
+    margin-right: 0; }
 
-.hero__subtitle {
-  font-size: 21px;
-  margin-bottom: 32px; }
+.highlight {
+  display: flex;
+  width: 128px; }
+  .highlight__icon {
+    height: 45px;
+    width: 45px;
+    margin-right: 12px; }
+  .highlight__text {
+    font-size: 16px;
+    line-height: 1.2;
+    padding-right: 10px;
+    max-width: 85px; }
 
 .btn {
-  padding: 21px 41px;
+  padding: 21px 35px;
   border-radius: 100px;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 19px;
+  line-height: 1;
+  font-weight: 700;
   text-transform: uppercase;
-  border: 1px solid #FFF;
+  border: none;
   cursor: pointer; }
-  .btn--color--white {
-    color: #365A49;
+  .btn--bg--white {
+    color: #0b4d3c;
     background: #FFF; }
-  .btn--color--green {
-    background: #365A49;
-    border-color: #365A49;
+  .btn--bg--green {
+    background: #0b4d3c;
+    border-color: #0b4d3c;
     color: #FFF; }
 
 /*# sourceMappingURL=main.css.map */

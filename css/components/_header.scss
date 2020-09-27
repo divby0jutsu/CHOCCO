@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phone-number__link {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.phone-number__icon-pic {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+}
