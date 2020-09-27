@@ -1,16 +1,16 @@
 .reviews-section {
-  background: url("../../img/decor/strawberry.png") right 4% top 8% no-repeat;
+  background: url("../img/decor/strawberry.png") right 4% top 8% no-repeat;
   position: relative;
 
   &::before {
-    content: url("../../img/decor/leaf-grey-2.png");
+    content: url("../img/decor/leaf-grey-2.png");
     position: absolute;
     left: 0;
     bottom: -166px;
   }
 
   &::after {
-    content: url("../../img/decor/berries.png");
+    content: url("../img/decor/berries.png");
     position: absolute;
     left: 0;
     bottom: -90px;

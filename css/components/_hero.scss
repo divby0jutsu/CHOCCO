@@ -2,11 +2,11 @@
   height: 100vh;
   min-height: 652px;
   color: #fff;
-  background: url("../../img/decor/large-leaf.png") right bottom no-repeat, $lightBlue;
+  background: url("../img/decor/large-leaf.png") right bottom no-repeat, $lightBlue;
   position: relative;
 
   &::before {
-    content: url("../../img/decor/leaf-decor.png");
+    content: url("../img/decor/leaf-decor.png");
     position: absolute;
     bottom: -60px;
     left: 2%;
@@ -26,7 +26,7 @@
   justify-content: space-between;
   height: 100%;
   padding: 24px 0 50px;
-  background: url("../../img/decor/chocco-bars.png") right center/ 54% auto no-repeat
+  background: url("../img/decor/chocco-bars.png") right center/ 54% auto no-repeat
 }
 
 .hero__text {

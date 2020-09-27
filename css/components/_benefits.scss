@@ -1,8 +1,8 @@
 .benefits {
   position: relative;
-  background: url("../../img/decor/leaf-grey.png") left top 57% no-repeat;
+  background: url("../img/decor/leaf-grey.png") left top 57% no-repeat;
   &::before {
-    content: url("../../img/decor/raspberry.png");
+    content: url("../img/decor/raspberry.png");
     position: absolute;
     bottom: -116px;
     left: 0;
@@ -32,7 +32,7 @@
   }
   
   &::before {
-    content: url("../../img/decor/separator.png");
+    content: url("../img/decor/separator.png");
     position: absolute;
     top: 20%;
     right: 0;

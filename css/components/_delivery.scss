@@ -1,16 +1,16 @@
 .delivery-section {
-  background: url('../../img/bg/berries-pattern.png') left top repeat;
+  background: url('../img/bg/berries-pattern.png') left top repeat;
   position: relative;
 
   &::before {
-    content: url("../../img/decor/blueberry.png");
+    content: url("../img/decor/blueberry.png");
     position: absolute;
     left: 5%;
     bottom: 10%;
   }
 
   &::after {
-    content: url("../../img/decor/leaf.png");
+    content: url("../img/decor/leaf.png");
     position: absolute;
     right: 5%;
     bottom: 10%;
