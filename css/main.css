@@ -71,7 +71,7 @@ img {
     bottom: -60px;
     left: 2%; }
   .hero::after {
-    content: url("../../img/decor/berries-and-leaves.png");
+    content: url("../img/decor/berries-and-leaves.png");
     position: absolute;
     bottom: -55px;
     right: 2%; }
@@ -300,8 +300,8 @@ img {
     object-fit: cover; }
 
 .review__content {
-  width: 52%;
-  margin-right: 10%;
+  width: 62%;
+  padding-right: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center; }
@@ -354,7 +354,7 @@ img {
   overflow: hidden;
   border: 4px solid transparent;
   position: relative; }
-  .interactive-avatar--active {
+  .interactive-avatar--active, .interactive-avatar:hover {
     border-color: #365A49; }
 
 .interactive-avatar__link {
@@ -401,6 +401,8 @@ img {
 .form__row {
   display: flex;
   margin-bottom: 14px; }
+  .form__row:last-child {
+    margin-bottom: 0; }
 
 .form__input {
   width: 100%;
@@ -464,6 +466,8 @@ img {
 
 .fixed-menu__item {
   margin-bottom: 5px; }
+  .fixed-menu__item:last-child {
+    margin-bottom: 0; }
   .fixed-menu__item--active .fixed-menu__link {
     border-color: #fff; }
 
