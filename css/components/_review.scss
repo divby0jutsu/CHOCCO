@@ -1,8 +1,12 @@
 .review {
   display: flex;
-  background: url("../img/decor/berries-drawing.png") right top 5% no-repeat, #F8FAF9;
-  padding: 50px 45px 34px;
-  margin-bottom: 22px;
+  background-image: url("../img/decor/berries-drawing.png");
+  background-size: 127px 167px; 
+  background-position: right top 5%; 
+  background-repeat: no-repeat;
+  background-color: #F8FAF9;
+  padding: px-to-rem(50) px-to-rem(45) px-to-rem(34);
+  margin-bottom: px-to-rem(22);
   position: relative;
   overflow: hidden;
 
@@ -23,7 +27,7 @@
   width: 254px;
   height: 260px;
   overflow: hidden;
-  margin-right: 40px;
+  margin-right: px-to-rem(40);
 
   &-pic {
     width: 100%;
@@ -41,18 +45,24 @@
 }
 
 .review__title {
-  font-size: 27px;
+  font-size: px-to-rem(27);
   font-weight: 700;
   color: #292929;
-  margin-bottom: 12px;
+  margin-bottom: px-to-rem(12);
 }
 
 .review__text {
   line-height: 1.2;
-  margin-bottom: 25px;
+  margin-bottom: px-to-rem(25);
 }
 
 .review__author {
   font-weight: 500;
   color: #292929;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .review {
+    background-image: url("../img/decor/berries-drawing2x.png");
+  }
 }

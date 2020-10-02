@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 55px;
+  margin-bottom: px-to-rem(55);
   text-align: center;
 }
 
 .headline__title {
-  margin-bottom: 9px;
+  margin-bottom: px-to-rem(9);
 }
 
 .headline__title-text {

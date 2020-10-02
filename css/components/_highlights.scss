@@ -4,7 +4,7 @@
 }
 
 .highlights__item {
-  margin-right: 46px;
+  margin-right: px-to-rem(46);
 
   &:last-child {
     margin-right: 0;

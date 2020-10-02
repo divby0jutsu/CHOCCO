@@ -1,5 +1,6 @@
-$containerWidth: 940px;
-$baseFontSize: 18px;
+$containerWidth: 940;
+$baseFontSizeValue: 18;
+$baseFontSize: $baseFontSizeValue + px;
 
 //colors
 
@@ -11,6 +12,22 @@ $darkGreen: #365A49;
 $z-section-decor: 10;
 $z-fixed-menu: 100;
 
+//mixins
+
+@mixin center-absolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//functions
+
+@function px-to-rem($sizeValue: $baseFontSizeValue) {
+	//font-size: $sizeValue + px;
+    $remValue: round(($sizeValue / $baseFontSizeValue)/0.01)*0.01 + rem;
+    @return $remValue;
+}
 
 // normalize.css
 @import "./normalize.css";

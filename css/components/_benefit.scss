@@ -10,7 +10,7 @@
   background-color: #F2F5F4;
   overflow: hidden;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: px-to-rem(20);
 }
 
 .benefit__icon-pic {
@@ -23,10 +23,10 @@
 }
 
 .benefit__title {
-  font-size: 27px;
+  font-size: px-to-rem(27);
   font-weight: 700;
   color: #292929;
-  margin-bottom: 12px;
+  margin-bottom: px-to-rem(12);
 }
 
 .benefit__desc p {

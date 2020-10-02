@@ -1,10 +1,18 @@
 .benefits {
   position: relative;
-  background: url("../img/decor/leaf-grey.png") left top 57% no-repeat;
+  background-image: url("../img/decor/leaf-grey.png");
+  background-size: 191px 314px;
+  background-position: left top 57%; 
+  background-repeat: no-repeat;
   &::before {
-    content: url("../img/decor/raspberry.png");
+    content: "";
+    background-image: url("../img/decor/raspberry.png");
+    background-size: 161px 315px;
+    width: 161px;
+    height: 315px;
+    object-fit: cover;
     position: absolute;
-    bottom: -116px;
+    bottom: px-to-rem(-116);
     left: 0;
   }
 }
@@ -38,5 +46,14 @@
     right: 0;
     transform: translateX(50%);
   }
+}
 
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .benefits {
+      background-image: url("../img/decor/leaf-greyx2.png");
+
+      &::before {
+        background-image: url("../img/decor/raspberry2x.png");
+      }
+  }
 }

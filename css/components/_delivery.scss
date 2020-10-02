@@ -3,14 +3,24 @@
   position: relative;
 
   &::before {
-    content: url("../img/decor/blueberry.png");
+    content: "";
+    background-image: url("../img/decor/blueberry.png");
+    background-size: 47px 48px;
+    width: 47px;
+    height: 48px;
+    object-fit: cover;
     position: absolute;
     left: 5%;
     bottom: 10%;
   }
 
   &::after {
-    content: url("../img/decor/leaf.png");
+    content: "";
+    background-image: url("../img/decor/leaf.png");
+    background-size: 135px 188px;
+    width: 135px;
+    height: 188px;
+    object-fit: cover;
     position: absolute;
     right: 5%;
     bottom: 10%;
@@ -19,5 +29,19 @@
 
 .delivery-section__title {
   color: #365A49;
-  margin-bottom: 42px;
+  margin-bottom: px-to-rem(42);
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .delivery-section {
+  
+    &::before {
+      background-image: url("../img/decor/blueberry2x.png");
+    }
+
+    &::after {
+      background-image: url("../img/decor/leafx2.png");
+    }
+  }
+
 }
