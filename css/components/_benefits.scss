@@ -1,31 +1,61 @@
 .benefits {
   position: relative;
   background-image: url("../img/decor/leaf-grey.png");
-  background-size: 191px 314px;
+  background-size: pxToRem(191px) pxToRem(314px);
   background-position: left top 57%; 
   background-repeat: no-repeat;
+
+  @include retina {
+    background-image: url("../img/decor/leaf-greyx2.png");
+  }
+
+  @include tablets {
+    background-position: left top 17%; 
+  }
+
+  @include mobiles {
+    background-image: none;
+  }
+
   &::before {
     content: "";
     background-image: url("../img/decor/raspberry.png");
-    background-size: 161px 315px;
-    width: 161px;
-    height: 315px;
+    background-size: pxToRem(161px) pxToRem(315px);
+    width: pxToRem(161px);
+    height: pxToRem(315px);
     object-fit: cover;
     position: absolute;
-    bottom: px-to-rem(-116);
+    bottom: pxToRem(-116px);
     left: 0;
+
+    @include retina {
+      background-image: url("../img/decor/raspberry2x.png");
+    }
+
+    @include mobiles {
+      display: none;
+    }
   }
 }
 
 .benefits__list {
   display: flex;
   justify-content: space-between;
+
+  @include mobiles {
+    flex-direction: column;
+  }
 }
 
 .benefits__item {
   flex: 1;
   padding: 0 3%;
   position: relative;
+
+  @include mobiles {
+    padding: 0;
+    margin-bottom: pxToRem(20px);
+  }
 
   &:first-child {
     padding-left: 0;
@@ -45,15 +75,11 @@
     top: 20%;
     right: 0;
     transform: translateX(50%);
+
+    @include tablets {
+      display: none;
+    }
   }
 }
 
-  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    .benefits {
-      background-image: url("../img/decor/leaf-greyx2.png");
 
-      &::before {
-        background-image: url("../img/decor/raspberry2x.png");
-      }
-  }
-}

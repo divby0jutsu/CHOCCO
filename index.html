@@ -2,7 +2,10 @@
 <html lang="ru-RU">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>CHOCCO</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;800&display=swap"
@@ -47,16 +50,19 @@
               </nav>
               <address class="phone-number">
                 <a href="tel:+78009039090" class="phone-number__link">
-                  <span class="phone-number__icon">
-                    <img
-                      src="./img/icons/phone.svg"
-                      alt="иконка телефона"
-                      class="phone-number__icon-pic"
-                    />
-                  </span>
-                  <span class="contacts__tel-number">8 800 903 90 90</span></a
+                  <svg class="phone-number__icon">
+                    <use xlink:href="./img/icons/sprite.svg#phone"></use>
+                  </svg>
+                  <span class="phone-number__tel-number"
+                    >8 800 903 90 90</span
+                  ></a
                 >
               </address>
+              <a href="#" class="hamburger">
+                <svg class="hamburger__icon">
+                  <use xlink:href="./img/icons/sprite.svg#hamburger"></use>
+                </svg>
+              </a>
             </header>
             <div class="hero__text">
               <h1 class="hero__title">Натуральные шоколадные батончики</h1>
@@ -69,33 +75,21 @@
             <div class="hero__highlights">
               <ul class="highlights">
                 <li class="highlights__item highlight">
-                  <div class="highlight__icon">
-                    <img
-                      src="./img/icons/leaves-icon.svg"
-                      alt="иконка лист"
-                      class="highlight__icon-pic"
-                    />
-                  </div>
+                  <svg class="highlight__icon">
+                    <use xlink:href="./img/icons/sprite.svg#leaves-icon"></use>
+                  </svg>
                   <div class="highlight__text">100% натуральный продукт</div>
                 </li>
                 <li class="highlights__item highlight">
-                  <div class="highlight__icon">
-                    <img
-                      src="./img/icons/delivery.svg"
-                      alt="иконка грузовик"
-                      class="highlight__icon-pic"
-                    />
-                  </div>
+                  <svg class="highlight__icon">
+                    <use xlink:href="./img/icons/sprite.svg#delivery"></use>
+                  </svg>
                   <div class="highlight__text">3-5 дней доставка по РФ</div>
                 </li>
                 <li class="highlights__item highlight">
-                  <div class="highlight__icon">
-                    <img
-                      src="./img/icons/measure.svg"
-                      alt="иконка сантиметровая лента"
-                      class="highlight__icon-pic"
-                    />
-                  </div>
+                  <svg class="highlight__icon">
+                    <use xlink:href="./img/icons/sprite.svg#measure"></use>
+                  </svg>
                   <div class="highlight__text">Не портит фигуру</div>
                 </li>
               </ul>
@@ -115,11 +109,9 @@
               <li class="benefits__item benefit">
                 <div class="benefit__icon">
                   <div class="benefit__icon-wrapper">
-                    <img
-                      src="./img/icons/person.svg"
-                      alt="иконка счастливый человек"
-                      class="benefit__icon-pic"
-                    />
+                    <svg class="benefit__icon-pic">
+                      <use xlink:href="./img/icons/sprite.svg#person"></use>
+                    </svg>
                   </div>
                 </div>
                 <div class="benefit__text">
@@ -135,11 +127,9 @@
               <li class="benefits__item benefit">
                 <div class="benefit__icon">
                   <div class="benefit__icon-wrapper">
-                    <img
-                      src="./img/icons/emoji.svg"
-                      alt="эмотикон улыбающееся лицо с глазами-сердечками"
-                      class="benefit__icon-pic"
-                    />
+                    <svg class="benefit__icon-pic">
+                      <use xlink:href="./img/icons/sprite.svg#emoji"></use>
+                    </svg>
                   </div>
                 </div>
                 <div class="benefit__text">
@@ -155,11 +145,9 @@
               <li class="benefits__item benefit">
                 <div class="benefit__icon">
                   <div class="benefit__icon-wrapper">
-                    <img
-                      src="./img/icons/arm.svg"
-                      alt="иконка сильная рука"
-                      class="benefit__icon-pic"
-                    />
+                    <svg class="benefit__icon-pic">
+                      <use xlink:href="./img/icons/sprite.svg#arm"></use>
+                    </svg>
                   </div>
                 </div>
                 <div class="benefit__text">
@@ -315,6 +303,60 @@
               </div>
             </form>
           </div>
+        </section>
+        <section class="section contacts-section">
+          <div class="map">
+            <img src="./img/contacts/map.png" alt="" class="map__display" />
+          </div>
+          <footer class="footer">
+            <div class="container footer__container">
+              <address class="address">
+                <div class="address_street">
+                  Москва, ул.Новый Арбат, д.31/12
+                </div>
+                <a href="tel:+78009039090" class="phone-number__link">
+                  <svg class="phone-number__icon">
+                    <use xlink:href="./img/icons/sprite.svg#phone"></use>
+                  </svg>
+                  <span class="phone-number__tel-number"
+                    >8 800 903 90 90</span
+                  ></a
+                >
+              </address>
+              <div class="socials">
+                <ul class="socials__list">
+                  <li class="socials__item socials__item--vk social">
+                    <a href="#" class="social__link">
+                      <svg class="social__icon">
+                        <use xlink:href="./img/icons/sprite.svg#vk"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item socials__item--f social">
+                    <a href="#" class="social__link">
+                      <svg class="social__icon">
+                        <use xlink:href="./img/icons/sprite.svg#f"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item socials__item--in social">
+                    <a href="#" class="social__link">
+                      <svg class="social__icon">
+                        <use xlink:href="./img/icons/sprite.svg#in"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item socials__item--tw social">
+                    <a href="#" class="social__link">
+                      <svg class="social__icon">
+                        <use xlink:href="./img/icons/sprite.svg#tv"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </footer>
         </section>
       </div>
       <nav class="fixed-menu">

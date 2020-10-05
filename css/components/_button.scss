@@ -1,9 +1,9 @@
 .btn {
-  padding: px-to-rem(21) px-to-rem(35);
-  border-radius: px-to-rem(100);
-  font-size: px-to-rem(19);
+  padding: pxToRem(24px) pxToRem(41px);
+  border-radius: pxToRem(100px);
+  font-size: pxToRem(16px);
   line-height: 1;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   border: none;
   cursor: pointer;

@@ -1,0 +1,16 @@
+.address {
+
+  @include mobiles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+.address_street {
+  font-size: pxToRem(21px);
+  font-weight: normal;
+  font-style: normal;
+  color: #292929;
+}

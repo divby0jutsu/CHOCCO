@@ -1,33 +1,51 @@
 .review {
   display: flex;
   background-image: url("../img/decor/berries-drawing.png");
-  background-size: 127px 167px; 
+  background-size: pxToRem(127px) pxToRem(167px); 
   background-position: right top 5%; 
   background-repeat: no-repeat;
   background-color: #F8FAF9;
-  padding: px-to-rem(50) px-to-rem(45) px-to-rem(34);
-  margin-bottom: px-to-rem(22);
+  padding: pxToRem(50px) pxToRem(45px) pxToRem(34px);
+  margin-bottom: pxToRem(22px);
   position: relative;
   overflow: hidden;
+
+  @include retina {
+    background-image: url("../img/decor/berries-drawing2x.png");
+  }
+
+  @include tablets {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: pxToRem(50px) pxToRem(24px) pxToRem(34px);
+  }
 
   &::before {
     display: block;
     content: "";
     position: absolute;
-    width: 83px;
-    height: 83px;
+    width: pxToRem(83px);
+    height: pxToRem(83px);
     border-radius: 50%;
     left: calc(50% - 45px);
-    top: -58px;
+    top: pxToRem(-58px);
     background-color:#fff;
   }
 }
 
 .review__photo {
-  width: 254px;
-  height: 260px;
+  width: pxToRem(254px);
+  height: pxToRem(260px);
   overflow: hidden;
-  margin-right: px-to-rem(40);
+  margin-right: pxToRem(40px);
+
+  @include tablets {
+    width: pxToRem(130px);
+    height: pxToRem(130px);
+    margin-right: 0;
+    margin-bottom: pxToRem(32px);
+  }
 
   &-pic {
     width: 100%;
@@ -42,18 +60,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include tablets {
+    width: 100%;
+    padding-right: 0;
+  }
 }
 
 .review__title {
-  font-size: px-to-rem(27);
+  font-size: pxToRem(27px);
   font-weight: 700;
   color: #292929;
-  margin-bottom: px-to-rem(12);
+  margin-bottom: pxToRem(12px);
 }
 
 .review__text {
   line-height: 1.2;
-  margin-bottom: px-to-rem(25);
+  margin-bottom: pxToRem(25px);
 }
 
 .review__author {
@@ -61,8 +84,3 @@
   color: #292929;
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .review {
-    background-image: url("../img/decor/berries-drawing2x.png");
-  }
-}

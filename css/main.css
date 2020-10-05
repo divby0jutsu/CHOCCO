@@ -8,6 +8,12 @@ html, body {
   height: 100%;
   margin: 0;
   font-size: 18px; }
+  @media screen and (max-width: 768px) {
+    html, body {
+      font-size: 17px; } }
+  @media screen and (max-width: 480px) {
+    html, body {
+      font-size: 16px; } }
 
 body {
   font-family: 'Alegreya Sans', 'Verdana', sans-serif;
@@ -50,12 +56,12 @@ img {
 .wrapper {
   position: relative;
   width: 100%;
-  min-width: calc(52.22rem + 1.11rem);
   min-height: 100%;
   overflow: hidden; }
 
 .container {
-  width: 52.22rem;
+  width: 95%;
+  max-width: 52.22rem;
   margin: 0 auto;
   position: relative; }
 
@@ -65,6 +71,15 @@ img {
   color: #fff;
   background: url("../img/decor/large-leaf.png") right bottom no-repeat, #61c4d9;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .hero {
+      background-position: right bottom 88%; } }
+  @media screen and (max-width: 480px) {
+    .hero {
+      background-image: none; } }
+  @media screen and (max-width: 768px) {
+    .hero::before, .hero::after {
+      display: none; } }
   .hero::before {
     content: url("../img/decor/leaf-decor.png");
     position: absolute;
@@ -81,12 +96,34 @@ img {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 1.33rem 0 2.78rem;
+  padding-top: 1.33rem;
+  padding-bottom: 2.78rem;
   background: url("../img/decor/chocco-bars.png") right center/54% auto no-repeat; }
+  @media screen and (max-width: 768px) {
+    .hero__container {
+      background-image: none; } }
 
 .hero__text {
-  margin: 3.33rem 0;
   width: 40%; }
+  @media screen and (max-width: 768px) {
+    .hero__text {
+      width: 98%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .hero__text:before {
+        content: "";
+        margin-bottom: 16px;
+        display: block;
+        width: 17.56rem;
+        height: 18.33rem;
+        background-image: url("../img/decor/768/chocco-bars.png");
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
 
 .hero__title {
   font-size: 2.67rem;
@@ -99,30 +136,85 @@ img {
   font-size: 1.17rem;
   line-height: 1.2;
   margin-bottom: 1.67rem; }
+  @media screen and (max-width: 768px) {
+    .hero__subtitle {
+      width: 50%;
+      margin-bottom: 1.11rem; } }
+  @media screen and (max-width: 480px) {
+    .hero__subtitle {
+      width: 70%; } }
 
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: flex-start; }
+  @media screen and (max-width: 768px) {
+    .header {
+      align-items: center; } }
+
+.logo {
+  flex: 0 0 2.94rem; }
+  .logo__pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+.menu {
+  margin: 0 1.67rem;
+  padding-top: 5px; }
+  @media screen and (max-width: 768px) {
+    .menu {
+      display: none; } }
+
+.menu__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.menu__item {
+  margin-bottom: 10px;
+  margin-right: 1.5rem; }
+  .menu__item:last-child {
+    margin-right: 0; }
+
+.menu__link {
+  white-space: nowrap; }
+
+.phone-number {
+  flex-shrink: 0; }
+  @media screen and (max-width: 768px) {
+    .phone-number {
+      display: none; } }
 
 .phone-number__link {
   font-size: 1.33rem;
   display: flex;
   align-items: center; }
 
-.phone-number__icon-pic {
-  width: 14px;
-  height: 14px;
+.phone-number__icon {
+  fill: #fff;
+  width: 0.78rem;
+  height: 0.78rem;
   margin-right: 0.33rem; }
 
-.menu__list {
-  display: flex;
-  align-items: center; }
+.address .phone-number__icon {
+  fill: #497870; }
 
-.menu__item {
-  margin-right: 1.5rem; }
-  .menu__item:last-child {
-    margin-right: 0; }
+.hamburger {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: inline-block; } }
+
+.hamburger__icon {
+  width: 26px;
+  height: 24px;
+  fill: #fff; }
+
+@media screen and (max-width: 768px) {
+  .hero__highlights {
+    display: none; } }
 
 .highlights {
   display: flex; }
@@ -136,8 +228,9 @@ img {
   display: flex;
   width: 7.11rem; }
   .highlight__icon {
-    height: 45px;
-    width: 45px;
+    fill: #c6f7ff;
+    height: 2.5rem;
+    width: 2.5rem;
     margin-right: 0.67rem; }
   .highlight__text {
     font-size: 0.89rem;
@@ -146,11 +239,11 @@ img {
     max-width: 4.72rem; }
 
 .btn {
-  padding: 1.17rem 1.94rem;
+  padding: 1.33rem 2.28rem;
   border-radius: 5.56rem;
-  font-size: 1.06rem;
+  font-size: 0.89rem;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   border: none;
   cursor: pointer; }
@@ -209,32 +302,57 @@ img {
 .headline__title-text {
   width: 48%;
   line-height: 1.2; }
+  @media screen and (max-width: 480px) {
+    .headline__title-text {
+      width: 98%; } }
 
 .benefits {
   position: relative;
   background-image: url("../img/decor/leaf-grey.png");
-  background-size: 191px 314px;
+  background-size: 10.61rem 17.44rem;
   background-position: left top 57%;
   background-repeat: no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .benefits {
+      background-image: url("../img/decor/leaf-greyx2.png"); } }
+  @media screen and (max-width: 768px) {
+    .benefits {
+      background-position: left top 17%; } }
+  @media screen and (max-width: 480px) {
+    .benefits {
+      background-image: none; } }
   .benefits::before {
     content: "";
     background-image: url("../img/decor/raspberry.png");
-    background-size: 161px 315px;
-    width: 161px;
-    height: 315px;
+    background-size: 8.94rem 17.5rem;
+    width: 8.94rem;
+    height: 17.5rem;
     object-fit: cover;
     position: absolute;
     bottom: -6.45rem;
     left: 0; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      .benefits::before {
+        background-image: url("../img/decor/raspberry2x.png"); } }
+    @media screen and (max-width: 480px) {
+      .benefits::before {
+        display: none; } }
 
 .benefits__list {
   display: flex;
   justify-content: space-between; }
+  @media screen and (max-width: 480px) {
+    .benefits__list {
+      flex-direction: column; } }
 
 .benefits__item {
   flex: 1;
   padding: 0 3%;
   position: relative; }
+  @media screen and (max-width: 480px) {
+    .benefits__item {
+      padding: 0;
+      margin-bottom: 1.11rem; } }
   .benefits__item:first-child {
     padding-left: 0; }
   .benefits__item:last-child {
@@ -247,31 +365,37 @@ img {
     top: 20%;
     right: 0;
     transform: translateX(50%); }
+    @media screen and (max-width: 768px) {
+      .benefits__item::before {
+        display: none; } }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .benefits {
-    background-image: url("../img/decor/leaf-greyx2.png"); }
-    .benefits::before {
-      background-image: url("../img/decor/raspberry2x.png"); } }
 .benefit {
   text-align: center; }
+  @media screen and (max-width: 480px) {
+    .benefit {
+      display: flex;
+      text-align: left; } }
 
 .benefit__icon-wrapper {
   display: inline-block;
-  width: 128px;
-  height: 128px;
+  width: 7.11rem;
+  height: 7.11rem;
   border-radius: 50%;
   background-color: #F2F5F4;
   overflow: hidden;
   position: relative;
   margin-bottom: 1.11rem; }
+  @media screen and (max-width: 480px) {
+    .benefit__icon-wrapper {
+      margin-bottom: 0;
+      margin-right: 0.67rem; } }
 
 .benefit__icon-pic {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 68px;
-  height: 68px;
+  width: 3.78rem;
+  height: 3.78rem;
   transform: translate(-50%, -50%); }
 
 .benefit__title {
@@ -287,7 +411,7 @@ img {
 .review {
   display: flex;
   background-image: url("../img/decor/berries-drawing.png");
-  background-size: 127px 167px;
+  background-size: 7.06rem 9.28rem;
   background-position: right top 5%;
   background-repeat: no-repeat;
   background-color: #F8FAF9;
@@ -295,22 +419,37 @@ img {
   margin-bottom: 1.22rem;
   position: relative;
   overflow: hidden; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .review {
+      background-image: url("../img/decor/berries-drawing2x.png"); } }
+  @media screen and (max-width: 768px) {
+    .review {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2.78rem 1.33rem 1.89rem; } }
   .review::before {
     display: block;
     content: "";
     position: absolute;
-    width: 83px;
-    height: 83px;
+    width: 4.61rem;
+    height: 4.61rem;
     border-radius: 50%;
     left: calc(50% - 45px);
-    top: -58px;
+    top: -3.23rem;
     background-color: #fff; }
 
 .review__photo {
-  width: 254px;
-  height: 260px;
+  width: 14.11rem;
+  height: 14.44rem;
   overflow: hidden;
   margin-right: 2.22rem; }
+  @media screen and (max-width: 768px) {
+    .review__photo {
+      width: 7.22rem;
+      height: 7.22rem;
+      margin-right: 0;
+      margin-bottom: 1.78rem; } }
   .review__photo-pic {
     width: 100%;
     height: 100%;
@@ -322,6 +461,10 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  @media screen and (max-width: 768px) {
+    .review__content {
+      width: 100%;
+      padding-right: 0; } }
 
 .review__title {
   font-size: 1.5rem;
@@ -337,34 +480,41 @@ img {
   font-weight: 500;
   color: #292929; }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .review {
-    background-image: url("../img/decor/berries-drawing2x.png"); } }
 .reviews-section {
   background-image: url("../img/decor/strawberry.png");
-  background-size: 136px 78px;
+  background-size: 7.56rem 4.33rem;
   background-position: right 4% top 8%;
   background-repeat: no-repeat;
   position: relative; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .reviews-section {
+      background-image: url("../img/decor/strawberry2x.png"); } }
   .reviews-section::before {
     content: "";
     background-image: url("../img/decor/leaf-grey-2.png");
-    background-size: 102px 321px;
-    width: 102px;
-    height: 321px;
+    background-size: 5.67rem 17.83rem;
+    width: 5.67rem;
+    height: 17.83rem;
     object-fit: cover;
     position: absolute;
     left: 0;
     bottom: -9.23rem; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      .reviews-section::before {
+        background-image: url("../img/decor/leaf-grey-2x2.png"); } }
   .reviews-section::after {
-    content: url("../img/decor/berries.png");
-    background-size: 135px 193px;
-    width: 135px;
-    height: 193px;
+    content: url("");
+    background-image: url("../img/decor/berries.png");
+    background-size: 7.5rem 10.72rem;
+    width: 7.5rem;
+    height: 10.72rem;
     object-fit: cover;
     position: absolute;
     left: 0;
     bottom: -5rem; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      .reviews-section::after {
+        background-image: url("../img/decor/berries2x.png"); } }
 
 .reviews {
   display: flex;
@@ -379,19 +529,12 @@ img {
   .reviews__switch-item:last-child {
     margin-right: 0; }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .reviews-section {
-    background-image: url("../img/decor/strawberry2x.png"); }
-    .reviews-section::before {
-      background-image: url("../img/decor/leaf-grey-2x2.png"); }
-    .reviews-section::after {
-      background-image: url("../img/decor/berries2x.png"); } }
 .interactive-avatar {
-  width: 74px;
-  height: 74px;
+  width: 4.11rem;
+  height: 4.11rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid transparent;
+  border: 0.22rem solid transparent;
   position: relative; }
   .interactive-avatar--active, .interactive-avatar:hover {
     border-color: #365A49; }
@@ -413,38 +556,49 @@ img {
 .delivery-section {
   background: url("../img/bg/berries-pattern.png") left top repeat;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .delivery-section::before, .delivery-section::after {
+      display: none; } }
   .delivery-section::before {
     content: "";
     background-image: url("../img/decor/blueberry.png");
-    background-size: 47px 48px;
-    width: 47px;
-    height: 48px;
+    background-size: 2.61rem 2.67rem;
+    width: 2.61rem;
+    height: 2.67rem;
     object-fit: cover;
     position: absolute;
     left: 5%;
     bottom: 10%; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      .delivery-section::before {
+        background-image: url("../img/decor/blueberry2x.png"); } }
   .delivery-section::after {
     content: "";
     background-image: url("../img/decor/leaf.png");
-    background-size: 135px 188px;
-    width: 135px;
-    height: 188px;
+    background-size: 7.5rem 10.44rem;
+    width: 7.5rem;
+    height: 10.44rem;
     object-fit: cover;
     position: absolute;
     right: 5%;
     bottom: 10%; }
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+      .delivery-section::after {
+        background-image: url("../img/decor/leafx2.png"); } }
 
 .delivery-section__title {
   color: #365A49;
   margin-bottom: 2.33rem; }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .delivery-section::before {
-    background-image: url("../img/decor/blueberry2x.png"); }
-  .delivery-section::after {
-    background-image: url("../img/decor/leafx2.png"); } }
 .form {
   display: flex; }
+  @media screen and (max-width: 768px) {
+    .form {
+      padding: 0 18%;
+      flex-direction: column; } }
+  @media screen and (max-width: 480px) {
+    .form {
+      padding: 0; } }
 
 .form__col, .form__block {
   flex: 1;
@@ -452,21 +606,30 @@ img {
   .form__col:last-child, .form__block:last-child {
     margin-right: 0; }
 
+@media screen and (max-width: 768px) {
+  .form__col {
+    margin-right: 0; } }
+
 .form__row {
   display: flex;
-  margin-bottom: 0.78rem; }
-  .form__row:last-child {
-    margin-bottom: 0; }
+  margin-bottom: 0.78rem;
+  width: 100%; }
 
 .form__input {
   width: 100%;
   border: none;
   padding: 1rem 0.61rem;
-  border-radius: 4px;
-  border: 3px solid transparent; }
+  border-radius: 0.22rem;
+  border: 0.17rem solid transparent; }
+  @media screen and (max-width: 768px) {
+    .form__input {
+      padding: 0.44rem 0.56rem; } }
   .form__input--textarea {
     resize: none;
     height: 10rem; }
+    @media screen and (max-width: 768px) {
+      .form__input--textarea {
+        height: 4.56rem; } }
   .form__input:focus {
     border-color: #DEE2BD;
     outline: none; }
@@ -474,15 +637,23 @@ img {
 .form__controls {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1.33rem; }
+  margin-bottom: 0.78rem; }
+  @media screen and (max-width: 480px) {
+    .form__controls {
+      justify-content: center; } }
+
+@media screen and (max-width: 768px) {
+  .form__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.22rem; } }
 
 .radio {
   display: flex;
   cursor: pointer;
   user-select: none;
-  margin-right: 1.28rem; }
-  .radio:last-child {
-    margin-right: 0; }
+  margin-right: 1.28rem;
+  margin-bottom: 0.56rem; }
   .radio--checkbox .radio__visible {
     border-radius: 0; }
     .radio--checkbox .radio__visible::before {
@@ -494,17 +665,17 @@ img {
     display: block; }
 
 .radio__visible {
-  width: 26px;
-  height: 26px;
+  width: 1.44rem;
+  height: 1.44rem;
   position: relative;
   border-radius: 50%;
   background: #FFF;
-  margin-right: 10px; }
+  margin-right: 0.56rem; }
   .radio__visible::before {
     display: none;
     content: "";
-    width: 14px;
-    height: 14px;
+    width: 0.78rem;
+    height: 0.78rem;
     background: #365A49;
     border-radius: 50%;
     position: absolute;
@@ -519,29 +690,99 @@ img {
   z-index: 100; }
 
 .fixed-menu__item {
-  margin-bottom: 5px; }
+  margin-bottom: 0.28rem; }
   .fixed-menu__item:last-child {
     margin-bottom: 0; }
   .fixed-menu__item--active .fixed-menu__link {
     border-color: #fff; }
 
 .fixed-menu__link {
-  width: 16px;
-  height: 16px;
+  width: 0.89rem;
+  height: 0.89rem;
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: 0.06rem solid transparent;
   display: block;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .fixed-menu__link {
+      display: none; } }
   .fixed-menu__link::after {
     content: "";
     display: block;
-    width: 6px;
-    height: 6px;
+    width: 0.33rem;
+    height: 0.33rem;
     border-radius: 50%;
     background-color: #fff;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+
+.contacts-section {
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+
+.map {
+  flex: 1; }
+
+.map__display {
+  height: 100%;
+  object-fit: cover; }
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 1rem 0;
+  background-color: #fff; }
+  .footer .phone-number__link {
+    font-size: 1.17rem;
+    color: #497870; }
+  .footer .phone-number__icon-pic {
+    width: 0.67rem;
+    height: 0.67rem; }
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  @media screen and (max-width: 480px) {
+    .footer__container {
+      flex-direction: column; } }
+
+@media screen and (max-width: 480px) {
+  .address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px; } }
+
+.address_street {
+  font-size: 1.17rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #292929; }
+
+.socials__list {
+  display: flex; }
+
+.socials__item {
+  margin-right: 0.78rem; }
+  .socials__item:last-child {
+    margin-right: 0; }
+
+.socials__item .social__link {
+  display: block;
+  width: 20px;
+  height: 20px; }
+
+.social__icon {
+  width: inherit;
+  height: inherit;
+  fill: #B3B3B3;
+  transition: 0.4s ease-in; }
+  .social__icon:hover {
+    fill: #292929; }
 
 /*# sourceMappingURL=main.css.map */

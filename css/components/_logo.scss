@@ -1,0 +1,10 @@
+.logo {
+  flex: 0 0 pxToRem(53px);
+
+  &__pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+}

@@ -7,6 +7,14 @@ html, body {
   height: 100%;
   margin: 0;
   font-size: $baseFontSize;
+
+  @include tablets {
+    font-size: $baseFontSize - 1px;
+  }
+
+  @include mobiles {
+    font-size: $baseFontSize - 2px;
+  }
 }
 
 body {
@@ -60,14 +68,16 @@ img {
 .wrapper {
   position: relative;
   width: 100%;
-  min-width: calc(#{px-to-rem($containerWidth)} + #{px-to-rem(20)});
   min-height: 100%;
   overflow: hidden;
 }
 
 .container {
-  width: px-to-rem($containerWidth);
+  width: 95%;
+  max-width: pxToRem($containerWidth);
   margin: 0 auto;
   position: relative;
 }
+
+
 

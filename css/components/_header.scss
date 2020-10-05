@@ -1,17 +1,12 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;    
+
+  @include tablets {
+    align-items: center;
+  }
 }
 
-.phone-number__link {
-  font-size: px-to-rem(24);
-  display: flex;
-  align-items: center;
-}
 
-.phone-number__icon-pic {
-  width: 14px;
-  height: 14px;
-  margin-right: px-to-rem(6);
-}
+

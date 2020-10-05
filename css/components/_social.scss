@@ -1,0 +1,12 @@
+.social__icon {
+  width: inherit;
+  height: inherit;
+  fill: #B3B3B3;
+  transition: 0.4s ease-in;
+
+  &:hover {
+    fill: #292929;
+    
+  }
+}
+

@@ -1,32 +1,42 @@
 .benefit {
   text-align: center;
+
+  @include mobiles {
+    display: flex;
+    text-align: left;
+  }
 }
 
 .benefit__icon-wrapper {
   display: inline-block;
-  width: 128px;
-  height: 128px;
+  width: pxToRem(128px);
+  height: pxToRem(128px);
   border-radius: 50%;
   background-color: #F2F5F4;
   overflow: hidden;
   position: relative;
-  margin-bottom: px-to-rem(20);
+  margin-bottom: pxToRem(20px);
+
+  @include mobiles {
+    margin-bottom: 0;
+    margin-right: pxToRem(12px);
+  }
 }
 
 .benefit__icon-pic {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 68px;
-  height: 68px;
+  width: pxToRem(68px);
+  height: pxToRem(68px);
   transform: translate(-50%, -50%);
 }
 
 .benefit__title {
-  font-size: px-to-rem(27);
+  font-size: pxToRem(27px);
   font-weight: 700;
   color: #292929;
-  margin-bottom: px-to-rem(12);
+  margin-bottom: pxToRem(12px);
 }
 
 .benefit__desc p {

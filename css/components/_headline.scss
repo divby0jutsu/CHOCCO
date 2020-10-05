@@ -2,15 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: px-to-rem(55);
+  margin-bottom: pxToRem(55px);
   text-align: center;
 }
 
 .headline__title {
-  margin-bottom: px-to-rem(9);
+  margin-bottom: pxToRem(9px);
 }
 
 .headline__title-text {
   width: 48%;
   line-height: 1.2;
+
+  @include mobiles {
+    width: 98%;
+  }
 }

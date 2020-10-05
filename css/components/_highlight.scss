@@ -1,17 +1,18 @@
 .highlight {
   display: flex;
-  width: px-to-rem(128);
+  width: pxToRem(128px);
 
   &__icon {
-    height: 45px;
-    width: 45px;
-    margin-right: px-to-rem(12);
+    fill: #c6f7ff;
+    height: pxToRem(45px);
+    width: pxToRem(45px);
+    margin-right: pxToRem(12px);
   }
 
   &__text {
-    font-size: px-to-rem(16);
+    font-size: pxToRem(16px);
     line-height: 1.2;
-    padding-right: px-to-rem(10);
-    max-width: px-to-rem(85);
+    padding-right: pxToRem(10px);
+    max-width: pxToRem(85px);
   }
 }

@@ -6,7 +6,7 @@
 }
 
 .fixed-menu__item {
-  margin-bottom: 5px;
+  margin-bottom: pxToRem(5px);
 
   &:last-child {
     margin-bottom: 0;
@@ -20,18 +20,22 @@
 }
 
 .fixed-menu__link {
-  width: 16px;
-  height: 16px;
+  width: pxToRem(16px);
+  height: pxToRem(16px);
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: pxToRem(1px) solid transparent;
   display: block;
   position: relative;
+
+  @include tablets {
+    display: none;
+  }
 
   &::after {
     content: "";
     display: block;
-    width: 6px;
-    height: 6px;
+    width: pxToRem(6px);
+    height: pxToRem(6px);
     border-radius: 50%;
     background-color: #fff;
     @include center-absolute;

@@ -1,18 +1,22 @@
-$containerWidth: 940;
-$baseFontSizeValue: 18;
-$baseFontSize: $baseFontSizeValue + px;
+$containerWidth: 940px;
+$baseFontSize: 18px;
 
 //colors
 
 $lightBlue: #61c4d9;
 $darkGreen: #365A49;
+$green: #497870;
 
 //z-indexes
 
 $z-section-decor: 10;
 $z-fixed-menu: 100;
 
-//mixins
+//breakpoints
+
+$tablet: 768px;
+$mobile: 480px;
+
 
 @mixin center-absolute {
     position: absolute;
@@ -21,13 +25,15 @@ $z-fixed-menu: 100;
     transform: translate(-50%, -50%);
 }
 
-//functions
+// //functions
 
-@function px-to-rem($sizeValue: $baseFontSizeValue) {
-	//font-size: $sizeValue + px;
-    $remValue: round(($sizeValue / $baseFontSizeValue)/0.01)*0.01 + rem;
-    @return $remValue;
-}
+// @function pxToRem($pxValue: $baseFontSize) {
+// 	//font-size: $sizeValue + px;
+//     $remValue: round(($pxValue / $baseFontSize)/0.01)*0.01 + 0rem;
+//     @return $remValue;
+// }
+
+@import "./components/media";
 
 // normalize.css
 @import "./normalize.css";
@@ -42,7 +48,10 @@ $z-fixed-menu: 100;
 
 @import "./components/hero";
 @import "./components/header";
+@import "./components/logo";
 @import "./components/menu";
+@import "./components/phone-number";
+@import "./components/hamburger";
 @import "./components/highlights";
 @import "./components/highlight";
 @import "./components/button";
@@ -57,3 +66,10 @@ $z-fixed-menu: 100;
 @import "./components/form";
 @import "./components/radio";
 @import "./components/fixed-menu";
+
+@import "./components/contacts";
+@import "./components/map";
+@import "./components/footer";
+@import "./components/address";
+@import "./components/socials";
+@import "./components/social";

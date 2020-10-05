@@ -1,0 +1,35 @@
+.hamburger {
+  display: none;
+
+  @include tablets {
+    display: inline-block;
+  }
+}
+
+.hamburger__icon {
+  width: 26px;
+  height: 24px;
+  fill: #fff;
+}
+
+
+// .hamburger__icon, .hamburger__icon::before, .hamburger__icon::after {
+//   display: block;
+//   width: 26px;
+//   height: 5px;
+//   background-color: #fff;
+//   border-radius: 5px;
+//   position: relative;
+// }
+
+// .hamburger__icon::before {
+//   content: "";
+//   top: -10px;
+//   position: absolute;
+// }
+
+// .hamburger__icon::after {
+//   content: "";
+//   top: 10px;
+//   position: absolute;
+// }

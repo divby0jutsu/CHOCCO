@@ -1,0 +1,29 @@
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: pxToRem(18px) 0;
+  background-color: #fff;
+
+  .phone-number__link {
+    font-size: pxToRem(21px);
+    color: $green;
+  }
+  
+  .phone-number__icon-pic {
+    width: pxToRem(12px);
+    height: pxToRem(12px);
+
+  }
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  @include mobiles {
+    flex-direction: column;
+  }
+}
+

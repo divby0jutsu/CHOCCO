@@ -1,31 +1,44 @@
 .reviews-section {
   background-image: url("../img/decor/strawberry.png");
-  background-size: 136px 78px;
+  background-size: pxToRem(136px) pxToRem(78px);
   background-position: right 4% top 8%;
   background-repeat: no-repeat;
   position: relative;
 
+  @include retina {
+    background-image: url("../img/decor/strawberry2x.png");
+  }
+
   &::before {
     content: "";
       background-image: url("../img/decor/leaf-grey-2.png");
-      background-size: 102px 321px;
-      width: 102px;
-      height: 321px;
+      background-size: pxToRem(102px) pxToRem(321px);
+      width: pxToRem(102px);
+      height: pxToRem(321px);
       object-fit: cover;
       position: absolute;
       left: 0;
-      bottom: px-to-rem(-166);
+      bottom: pxToRem(-166px);
+
+      @include retina {
+        background-image: url("../img/decor/leaf-grey-2x2.png");
+      }
   }
 
   &::after {
-    content: url("../img/decor/berries.png");
-    background-size: 135px 193px;
-    width: 135px;
-    height: 193px;
+    content: url("");
+    background-image: url("../img/decor/berries.png");
+    background-size: pxToRem(135px) pxToRem(193px);
+    width: pxToRem(135px);
+    height: pxToRem(193px);
     object-fit: cover;
     position: absolute;
     left: 0;
-    bottom: px-to-rem(-90);
+    bottom: pxToRem(-90px);
+
+    @include retina {
+      background-image: url("../img/decor/berries2x.png");
+    }
   }
 
 }
@@ -40,23 +53,9 @@
 }
 
 .reviews__switch-item {
-  margin-right: px-to-rem(6);
+  margin-right: pxToRem(6px);
 
   &:last-child {
     margin-right: 0;
   }
-}
-
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .reviews-section {
-    background-image: url("../img/decor/strawberry2x.png");
-
-    &::before {
-      background-image: url("../img/decor/leaf-grey-2x2.png");
-    }
-
-    &::after {
-      background-image: url("../img/decor/berries2x.png");
-  }
-}
 }

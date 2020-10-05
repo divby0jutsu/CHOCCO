@@ -1,0 +1,24 @@
+.phone-number {
+  flex-shrink: 0;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.phone-number__link {
+  font-size: pxToRem(24px);
+  display: flex;
+  align-items: center;
+}
+
+.phone-number__icon {
+  fill: #fff;
+  width: pxToRem(14px);
+  height: pxToRem(14px);
+  margin-right: pxToRem(6px);
+}
+
+.address .phone-number__icon {
+  fill: $green;
+}
