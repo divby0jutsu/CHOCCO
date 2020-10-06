@@ -3,6 +3,9 @@
 
   @include tablets {
     display: inline-block;
+    position: fixed;
+    top: 31px;
+    right: 2%;
   }
 }
 
