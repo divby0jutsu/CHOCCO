@@ -1,0 +1,122 @@
+.product__ingredients {
+
+  @include tablets {
+    display: none;
+  }
+}
+.product__img {
+  flex: 1;
+  min-height: 100%;
+  overflow: hidden;
+  background: url("../img/shop/product.png") center center/contain no-repeat;
+  position: relative;
+
+  @include tablets {
+    width: 100%;
+    min-height: 50%;
+  }
+
+  &::before {
+    content: "";
+    background-image: url("../img/decor/product__leaf2.png");
+    background-size: pxToRem(75px) pxToRem(92px);
+    width: pxToRem(75px);
+    height: pxToRem(92px);
+    object-fit: cover;
+    position: absolute;
+    top: 30%;
+    left: 0;
+
+    @include tablets {
+      left: 10%;
+      background-size: pxToRem(59px) pxToRem(72px);
+    width: pxToRem(59px);
+    height: pxToRem(72px);
+    }
+    @include mobiles {
+      left: 0;
+    }
+  }
+
+  &::after {
+    content: "";
+    background-image: url("../img/decor/product__leaf1.png");
+    background-size: pxToRem(99px) pxToRem(73px);
+    width: pxToRem(99px);
+    height: pxToRem(73px);
+    object-fit: cover;
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+
+    @include tablets {
+      right: 10%;
+      bottom: 0;
+      background-size: pxToRem(78px) pxToRem(57px);
+    width: pxToRem(78px);
+    height: pxToRem(57px);
+    }
+
+    @include mobiles {
+      right: 0;
+    }
+  }
+}
+
+.product__desc, .product__info {
+  display: flex;
+  flex-direction: column;
+  
+  @include tablets {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.product__desc {
+  padding-left: pxToRem(44px);
+  flex: 1;
+  
+
+  @include tablets {
+    padding-left: 0;
+  }
+}
+
+.product__desc > *, .product__info > * {
+  margin-bottom: pxToRem(24px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.product__title {
+  font-size: pxToRem(36px);
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #292929;
+  
+  @include tablets {
+  margin-bottom: 14px;
+  }
+}
+
+.product__parameters {
+  display: flex;
+}
+
+.product__order {
+  display: flex;
+  align-items: center;
+}
+
+.product__order-price {
+  font-size: pxToRem(60px);
+  line-height: 1;
+  font-weight: 300;
+  color: #151515;
+  margin-right: 29px;
+  white-space: nowrap;
+}

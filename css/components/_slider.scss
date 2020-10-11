@@ -1,0 +1,43 @@
+
+.slider__display {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  @include tablets {
+    align-items: stretch;
+  }
+}
+
+.slider__list, .slider__item {
+  display: flex;
+}
+
+.slider__item {
+  height: 100%;
+  padding: pxToRem(36px);
+
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.slider__arrow {
+  position: absolute;
+  top: 50%;
+
+  &-icon {
+    width: 14px;
+    height: 27px;
+  }
+
+  &--left {
+    transform: rotate(180deg);
+  }
+
+  &--right {
+    right: 0;
+  }
+
+}

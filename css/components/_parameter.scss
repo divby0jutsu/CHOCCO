@@ -1,0 +1,15 @@
+.parameter {
+  display: flex;
+  flex-direction: column;
+  margin-right: 44px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__desc {
+    font-weight: 700;
+    color: #000;
+  }
+
+}

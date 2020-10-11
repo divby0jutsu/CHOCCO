@@ -19,12 +19,14 @@
   }
 
   &--bg--green {
-    background: $darkGreen;
-    border-color: $darkGreen;
+    background: $green;
+    border-color: $green;
     color: #FFF;
+    
     &:hover {
-      color: $darkGreen;
-      background: #FFF;
+      background: $darkGreen;
+      border-color: $darkGreen;
+      color: #FFF;
     }
   }
 

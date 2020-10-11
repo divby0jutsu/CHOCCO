@@ -1,0 +1,15 @@
+.ingredient__name {
+  padding-left: pxToRem(16px);
+  padding-right: pxToRem(32px);
+}
+
+.ingredient__icon {
+  svg {
+  width: 32px;
+  height: 32px;
+}
+}
+
+.ingredient__name {
+  width: 125px;
+}

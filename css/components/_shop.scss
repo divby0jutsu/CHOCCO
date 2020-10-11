@@ -1,0 +1,45 @@
+.shop {
+  background-color: #F8FAF9;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url("../img/decor/grey_leaf_large.png");
+    background-size: pxToRem(196px) pxToRem(453px);
+    width: pxToRem(196px);
+    height: pxToRem(453px);
+    object-fit: cover;
+    position: absolute;
+    bottom: -28%;
+    right: 0;
+    z-index: 0;
+
+    @include tablets {
+      background-size: pxToRem(152px) pxToRem(351px);
+    width: pxToRem(152px);
+    height: pxToRem(351px);
+    }
+  }
+
+  &::after {
+    content: "";
+    background-image: url("../img/decor/blueberries.png");
+    background-size: pxToRem(135px) pxToRem(112px);
+    width: pxToRem(135px);
+    height: pxToRem(112px);
+    object-fit: cover;
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+
+    @include tablets {
+      background-size: pxToRem(104px) pxToRem(86px);
+    width: pxToRem(104px);
+    height: pxToRem(86px);
+    }
+  }
+}
+
+.shop__container, .shop__slider {
+  height: 100%;
+}

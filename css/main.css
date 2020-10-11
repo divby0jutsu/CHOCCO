@@ -260,12 +260,13 @@ img {
       border-color: #365A49;
       color: #FFF; }
   .btn--bg--green {
-    background: #365A49;
-    border-color: #365A49;
+    background: #497870;
+    border-color: #497870;
     color: #FFF; }
     .btn--bg--green:hover {
-      color: #365A49;
-      background: #FFF; }
+      background: #365A49;
+      border-color: #365A49;
+      color: #FFF; }
   .btn--bg--transparent {
     background: transparent;
     color: #000;
@@ -831,5 +832,235 @@ img {
 
 .active {
   display: flex; }
+
+.slider__display {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center; }
+  @media screen and (max-width: 768px) {
+    .slider__display {
+      align-items: stretch; } }
+
+.slider__list, .slider__item {
+  display: flex; }
+
+.slider__item {
+  height: 100%;
+  padding: 2rem; }
+  @media screen and (max-width: 768px) {
+    .slider__item {
+      flex-direction: column; } }
+
+.slider__arrow {
+  position: absolute;
+  top: 50%; }
+  .slider__arrow-icon {
+    width: 14px;
+    height: 27px; }
+  .slider__arrow--left {
+    transform: rotate(180deg); }
+  .slider__arrow--right {
+    right: 0; }
+
+@media screen and (max-width: 768px) {
+  .product__ingredients {
+    display: none; } }
+
+.product__img {
+  flex: 1;
+  min-height: 100%;
+  overflow: hidden;
+  background: url("../img/shop/product.png") center center/contain no-repeat;
+  position: relative; }
+  @media screen and (max-width: 768px) {
+    .product__img {
+      width: 100%;
+      min-height: 50%; } }
+  .product__img::before {
+    content: "";
+    background-image: url("../img/decor/product__leaf2.png");
+    background-size: 4.17rem 5.11rem;
+    width: 4.17rem;
+    height: 5.11rem;
+    object-fit: cover;
+    position: absolute;
+    top: 30%;
+    left: 0; }
+    @media screen and (max-width: 768px) {
+      .product__img::before {
+        left: 10%;
+        background-size: 3.28rem 4rem;
+        width: 3.28rem;
+        height: 4rem; } }
+    @media screen and (max-width: 480px) {
+      .product__img::before {
+        left: 0; } }
+  .product__img::after {
+    content: "";
+    background-image: url("../img/decor/product__leaf1.png");
+    background-size: 5.5rem 4.06rem;
+    width: 5.5rem;
+    height: 4.06rem;
+    object-fit: cover;
+    position: absolute;
+    bottom: 10%;
+    right: 0; }
+    @media screen and (max-width: 768px) {
+      .product__img::after {
+        right: 10%;
+        bottom: 0;
+        background-size: 4.33rem 3.17rem;
+        width: 4.33rem;
+        height: 3.17rem; } }
+    @media screen and (max-width: 480px) {
+      .product__img::after {
+        right: 0; } }
+
+.product__desc, .product__info {
+  display: flex;
+  flex-direction: column; }
+  @media screen and (max-width: 768px) {
+    .product__desc, .product__info {
+      align-items: center;
+      text-align: center; } }
+
+.product__desc {
+  padding-left: 2.44rem;
+  flex: 1; }
+  @media screen and (max-width: 768px) {
+    .product__desc {
+      padding-left: 0; } }
+
+.product__desc > *, .product__info > * {
+  margin-bottom: 1.33rem; }
+  .product__desc > *:last-child, .product__info > *:last-child {
+    margin-bottom: 0; }
+
+.product__title {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #292929; }
+  @media screen and (max-width: 768px) {
+    .product__title {
+      margin-bottom: 14px; } }
+
+.product__parameters {
+  display: flex; }
+
+.product__order {
+  display: flex;
+  align-items: center; }
+
+.product__order-price {
+  font-size: 3.33rem;
+  line-height: 1;
+  font-weight: 300;
+  color: #151515;
+  margin-right: 29px;
+  white-space: nowrap; }
+
+.shop {
+  background-color: #F8FAF9;
+  position: relative; }
+  .shop::before {
+    content: "";
+    background-image: url("../img/decor/grey_leaf_large.png");
+    background-size: 10.89rem 25.17rem;
+    width: 10.89rem;
+    height: 25.17rem;
+    object-fit: cover;
+    position: absolute;
+    bottom: -28%;
+    right: 0;
+    z-index: 0; }
+    @media screen and (max-width: 768px) {
+      .shop::before {
+        background-size: 8.44rem 19.5rem;
+        width: 8.44rem;
+        height: 19.5rem; } }
+  .shop::after {
+    content: "";
+    background-image: url("../img/decor/blueberries.png");
+    background-size: 7.5rem 6.22rem;
+    width: 7.5rem;
+    height: 6.22rem;
+    object-fit: cover;
+    position: absolute;
+    bottom: -10%;
+    right: 0; }
+    @media screen and (max-width: 768px) {
+      .shop::after {
+        background-size: 5.78rem 4.78rem;
+        width: 5.78rem;
+        height: 4.78rem; } }
+
+.shop__container, .shop__slider {
+  height: 100%; }
+
+.ingredients__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 91px;
+  height: 91px;
+  padding: 12px 22px;
+  background-color: #86C3D7;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 4px; }
+
+.ingredients__dropdown {
+  display: inline-block;
+  position: relative; }
+  .ingredients__dropdown:hover .ingredients__dropdown-table {
+    display: block; }
+
+.ingredients__dropdown-table {
+  display: none;
+  position: absolute;
+  top: 0;
+  padding-left: 92px; }
+
+.ingredients__icon {
+  width: 46px;
+  height: 46px;
+  fill: #fff;
+  padding-bottom: 4px; }
+
+.ingredients__table {
+  word-wrap: none;
+  font-size: 16px;
+  color: #000;
+  white-space: nowrap; }
+  .ingredients__table-wrapper {
+    padding: 1.78rem 1.44rem;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.06);
+    background-color: #F5F5F5; }
+
+.parameter {
+  display: flex;
+  flex-direction: column;
+  margin-right: 44px; }
+  .parameter:last-child {
+    margin-right: 0; }
+  .parameter__desc {
+    font-weight: 700;
+    color: #000; }
+
+.ingredient__name {
+  padding-left: 0.89rem;
+  padding-right: 1.78rem; }
+
+.ingredient__icon svg {
+  width: 32px;
+  height: 32px; }
+
+.ingredient__name {
+  width: 125px; }
 
 /*# sourceMappingURL=main.css.map */
