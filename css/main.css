@@ -19,6 +19,7 @@ body {
   font-family: 'Alegreya Sans', 'Verdana', sans-serif;
   color: #666;
   line-height: 1.42;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -208,7 +209,7 @@ img {
     .hamburger {
       display: inline-block;
       position: fixed;
-      top: 31px;
+      top: 30px;
       right: 2%; } }
 
 .hamburger__icon {
@@ -790,5 +791,45 @@ img {
   transition: 0.4s ease-in; }
   .social__icon:hover {
     fill: #292929; }
+
+.fullscreen-menu {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .fullscreen-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #333537; } }
+  @media screen and (max-width: 768px) {
+    .fullscreen-menu__close {
+      display: block;
+      position: absolute;
+      top: 42px;
+      right: 42px; }
+      .fullscreen-menu__close .close__icon {
+        fill: rgba(255, 255, 255, 0.7);
+        width: 20px;
+        height: 20px; } }
+
+.menu--vertical {
+  display: block;
+  padding: 0;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2; }
+  .menu--vertical .menu__list {
+    flex-direction: column; }
+    .menu--vertical .menu__list .menu__item {
+      margin-right: 0;
+      margin-bottom: 0; }
+
+.active {
+  display: flex; }
 
 /*# sourceMappingURL=main.css.map */

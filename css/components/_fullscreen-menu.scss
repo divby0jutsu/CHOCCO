@@ -1,0 +1,53 @@
+.fullscreen-menu {
+  display: none;
+
+  @include tablets {
+  display: none; //flex
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333537;
+  }
+
+  &__close {
+    
+    @include tablets {
+      display: block;
+      position: absolute;
+      top: 42px;
+      right: 42px;
+      
+
+      .close__icon {
+        fill: rgba(255, 255, 255, 0.7);
+        width: 20px;
+      height: 20px;
+      }
+    }
+  }
+}
+
+.menu--vertical {
+  display: block;
+  padding: 0;
+  color: #fff;
+  font-size: pxToRem(36px);
+  line-height: 2;
+  .menu__list {
+  flex-direction: column;
+
+    .menu__item {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.active {
+  display: flex;
+}
