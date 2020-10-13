@@ -2,16 +2,19 @@
   display: none;
 
   @include tablets {
-  display: none; //flex
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
+  left: 100%;
   width: 100%;
   height: 100%;
+  opacity: 0;
   background-color: #333537;
+  transition: 0.4s;
+  z-index: 20;
   }
 
   &__close {
@@ -48,6 +51,11 @@
   }
 }
 
-.active {
-  display: flex;
+.fullscreen-menu--active {
+  opacity: 1;
+  left: 0;
+}
+
+.body--active {
+  overflow: hidden;
 }
