@@ -1,9 +1,11 @@
 
 .slider__display {
-  position: relative;
   height: 100%;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-left: 26px;
 
   @include tablets {
     align-items: stretch;
@@ -12,10 +14,15 @@
 
 .slider__list, .slider__item {
   display: flex;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.slider__list {
+  position: absolute;
 }
 
 .slider__item {
-  height: 100%;
   padding: pxToRem(36px);
 
   @include tablets {

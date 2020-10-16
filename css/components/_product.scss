@@ -8,7 +8,6 @@
   flex: 1;
   min-height: 100%;
   overflow: hidden;
-  background: url("../img/shop/product.png") center center/contain no-repeat;
   position: relative;
 
   @include tablets {
@@ -61,6 +60,12 @@
       right: 0;
     }
   }
+}
+
+.product__img-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .product__desc, .product__info {
