@@ -857,10 +857,12 @@ img {
   width: 100%; }
 
 .slider__list {
-  position: absolute; }
+  position: absolute;
+  transition-delay: 0.2s; }
 
 .slider__item {
-  padding: 2rem; }
+  padding: 2rem;
+  transition: opacity 0.2s; }
   @media screen and (max-width: 768px) {
     .slider__item {
       flex-direction: column; } }

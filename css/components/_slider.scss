@@ -20,10 +20,12 @@
 
 .slider__list {
   position: absolute;
+  transition-delay: 0.2s;
 }
 
 .slider__item {
   padding: pxToRem(36px);
+  transition: opacity 0.2s;
 
   @include tablets {
     flex-direction: column;
