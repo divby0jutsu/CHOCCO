@@ -416,8 +416,12 @@ img {
   font-weight: 300;
   line-height: 1.2; }
 
-.review {
+.review__list {
   display: flex;
+  position: relative;
+  overflow: hidden; }
+
+.review {
   background-image: url("../img/decor/berries-drawing.png");
   background-size: 7.06rem 9.28rem;
   background-position: right top 5%;
@@ -425,8 +429,9 @@ img {
   background-color: #F8FAF9;
   padding: 2.78rem 2.5rem 1.89rem;
   margin-bottom: 1.22rem;
-  position: relative;
-  overflow: hidden; }
+  position: absolute;
+  display: flex;
+  opacity: 0; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .review {
       background-image: url("../img/decor/berries-drawing2x.png"); } }
@@ -446,6 +451,10 @@ img {
     left: calc(50% - 45px);
     top: -3.23rem;
     background-color: #fff; }
+
+.review__item--active {
+  position: static;
+  opacity: 1; }
 
 .review__photo {
   width: 14.11rem;
@@ -1160,7 +1169,7 @@ img {
     border-width: 9px 5px 0;
     transition: 0.2s; }
 
-.team-member__name.active::after {
+.team-member__name--active::after {
   transform: scaleY(-1); }
 
 .team-member__info {

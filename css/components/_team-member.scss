@@ -61,7 +61,7 @@
   }
 }
 
-.team-member__name.active::after {
+.team-member__name--active::after {
   transform: scaleY(-1);
 }
 

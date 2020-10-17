@@ -53,7 +53,7 @@ const teamPhoto = $(".team-member__photo");
 
 const clear = () => {
   teamInfo.height(0);
-  teamName.removeClass("active");
+  teamName.removeClass("team-member__name--active");
   if(teamMember.css('flex-direction') == 'column') {
     teamPhoto.height(0);} else {teamPhoto.height('auto')};
 }
@@ -79,11 +79,29 @@ teamName.on('click', function() {
 
   if (el.height() == 0) {
     el.height(ht);
-    $(this).toggleClass("active");
+    $(this).toggleClass("team-member__name--active");
   } else {
     el.height(0);
   }
   
+});
+
+///
+
+const review = $(".review");
+const reviewAvatar = $(".reviews__switch-item");
+
+review.eq(0).addClass("review__item--active");
+reviewAvatar.eq(0).addClass("interactive-avatar--active");
+
+reviewAvatar.on("click", function(e) {
+  const link = $(this);
+  const ndx = link.index();
+  e.preventDefault();
+  review.removeClass("review__item--active");
+  reviewAvatar.removeClass("interactive-avatar--active");
+  link.addClass("interactive-avatar--active");
+  review.eq(ndx).addClass("review__item--active");
 });
 
 
