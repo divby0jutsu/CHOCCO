@@ -1,10 +1,10 @@
-$(document).ready(function(){
-  $('.slider__list').bxSlider({
-    mode: 'fade',
-    captions: true,
-    slideWidth: 940
-  });
-});
+// $(document).ready(function(){
+//   $('.slider__list').bxSlider({
+//     mode: 'fade',
+//     captions: true,
+//     slideWidth: 940
+//   });
+// });
 //variables
 const burger = document.querySelector('#hamburger');
 const modalMenu = document.querySelector('.fullscreen-menu');
@@ -34,14 +34,56 @@ menuLinks.forEach(el => {
 
 ///
 
-// const moveSlider = (e) => {
-//   e.preventDefault();
-//   c < 0 ? c = sliderCount.length - 1: c = c%sliderCount.length;
-//   sliderCount[c].style.opacity = 0;
-//   sliderCount[ndx].style.opacity = 0;
-//   sliderList.style.left= -100*c +"%";
-//   sliderCount[c].style.opacity = 1;
-// };
+const moveSlider = (e) => {
+  e.preventDefault();
+  c < 0 ? c = sliderCount.length - 1: c = c%sliderCount.length;
+  sliderCount[c].style.opacity = 0;
+  sliderCount[ndx].style.opacity = 0;
+  sliderList.style.left= -100*c +"%";
+  sliderCount[c].style.opacity = 1;
+};
 
-// arrowLeft.addEventListener('click', e => {ndx = c; c--; moveSlider(e)});
-// arrowRight.addEventListener('click', e => {ndx = c; c++; moveSlider(e)});
+arrowLeft.addEventListener('click', e => {ndx = c; c--; moveSlider(e)});
+arrowRight.addEventListener('click', e => {ndx = c; c++; moveSlider(e)});
+
+const teamMember = $(".team-member");
+const teamName = $(".team-member__name");
+const teamInfo = $(".team-member__info");
+const teamPhoto = $(".team-member__photo");
+
+const clear = () => {
+  teamInfo.height(0);
+  teamName.removeClass("active");
+  if(teamMember.css('flex-direction') == 'column') {
+    teamPhoto.height(0);} else {teamPhoto.height('auto')};
+}
+
+$(window).on('resize', ()=> { clear(); console.log($(this).width())});
+
+
+teamName.on('click', function() {
+  let el = $(this).parents(".team-member").find(".team-member__info");
+  let photo = $(this).parents(".team-member").find(".team-member__photo");
+  let ht = 0;
+
+
+  clear();
+
+  if(teamMember.css('flex-direction') == 'column') {
+  photo.height() == 0? photo.height(290):photo.height(0);
+  } 
+
+  el.children().each(function(){
+    ht = ht + $(this).outerHeight();
+  });
+
+  if (el.height() == 0) {
+    el.height(ht);
+    $(this).toggleClass("active");
+  } else {
+    el.height(0);
+  }
+  
+});
+
+

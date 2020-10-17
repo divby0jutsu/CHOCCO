@@ -847,9 +847,6 @@ img {
   overflow: hidden;
   position: relative;
   margin-left: 26px; }
-  @media screen and (max-width: 768px) {
-    .slider__display {
-      align-items: stretch; } }
 
 .slider__list, .slider__item {
   display: flex;
@@ -857,6 +854,8 @@ img {
   width: 100%; }
 
 .slider__list {
+  justify-content: center;
+  align-items: center;
   position: absolute;
   transition-delay: 0.2s; }
 
@@ -1081,5 +1080,106 @@ img {
 
 .ingredient__name {
   width: 125px; }
+
+.team {
+  position: relative; }
+  .team::after {
+    content: "";
+    background-image: url("../img/decor/raspberry__team.png");
+    background-size: 5.78rem 6.33rem;
+    width: 5.78rem;
+    height: 6.33rem;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    bottom: -3.62rem; }
+
+.team__list {
+  display: flex; }
+  @media screen and (max-width: 768px) {
+    .team__list {
+      flex-direction: column;
+      align-items: center; } }
+
+.team__item {
+  margin-right: 20px; }
+  .team__item:last-child {
+    margin-right: 0; }
+  @media screen and (max-width: 768px) {
+    .team__item {
+      margin-right: 0; } }
+
+.team-member {
+  text-align: center;
+  position: relative; }
+  @media screen and (max-width: 768px) {
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px; }
+      .team-member:last-child {
+        margin-bottom: 0; } }
+
+.team-member__card {
+  display: flex;
+  flex-direction: column; }
+  @media screen and (max-width: 768px) {
+    .team-member__card {
+      flex-direction: column-reverse;
+      align-items: center; } }
+
+.team-member__photo {
+  margin-bottom: 1.17rem;
+  transition: 0.3s;
+  height: auto; }
+  @media screen and (max-width: 768px) {
+    .team-member__photo {
+      height: 0;
+      overflow: hidden;
+      width: 220px; } }
+
+.team-member__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  font-weight: 700;
+  color: #292929;
+  margin-bottom: 0.44rem;
+  position: relative; }
+  .team-member__name::after {
+    content: '';
+    margin-left: 5px;
+    display: block;
+    border: 8px solid transparent;
+    width: 0;
+    height: 0;
+    border-top-color: #365A49;
+    border-width: 9px 5px 0;
+    transition: 0.2s; }
+
+.team-member__name.active::after {
+  transform: scaleY(-1); }
+
+.team-member__info {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s; }
+  @media screen and (max-width: 768px) {
+    .team-member__info {
+      position: relative; } }
+
+.team-member__info-position {
+  color: #292929;
+  margin-bottom: 0.22rem; }
+  @media screen and (max-width: 768px) {
+    .team-member__info-position {
+      font-weight: 700; } }
+
+.team-member__info-task {
+  font-weight: 300; }
 
 /*# sourceMappingURL=main.css.map */

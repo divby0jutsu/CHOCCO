@@ -7,9 +7,9 @@
   position: relative;
   margin-left: 26px;
 
-  @include tablets {
-    align-items: stretch;
-  }
+  // @include tablets {
+  //   align-items: stretch;
+  // }
 }
 
 .slider__list, .slider__item {
@@ -19,6 +19,8 @@
 }
 
 .slider__list {
+  justify-content: center;
+  align-items: center;
   position: absolute;
   transition-delay: 0.2s;
 }

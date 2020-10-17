@@ -1,0 +1,91 @@
+.team-member {
+  text-align: center;
+  position: relative;
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.team-member__card {
+  display: flex;
+  flex-direction: column;
+
+  @include tablets {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
+.team-member__photo {
+  margin-bottom: pxToRem(21px);
+  transition: 0.3s;
+  height: auto;
+  
+  
+  @include tablets {
+    height: 0;
+    overflow: hidden;
+    width: 220px;
+  }
+}
+
+.team-member__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  font-weight: 700;
+  color: #292929;
+  margin-bottom: pxToRem(8px);
+  position: relative;
+
+  &::after {
+    content: '';
+    margin-left: 5px;
+    display: block;
+    border: 8px solid transparent;
+    width: 0;
+    height: 0;
+    border-top-color:$darkGreen;
+    border-width: 9px 5px 0;
+    transition: 0.2s;
+  }
+}
+
+.team-member__name.active::after {
+  transform: scaleY(-1);
+}
+
+.team-member__info {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+
+  @include tablets {
+    position: relative;
+  }
+}
+
+.team-member__info-position {
+  color: #292929;
+  margin-bottom: pxToRem(4px);
+
+  @include tablets {
+    font-weight: 700;
+  }
+}
+
+.team-member__info-task {
+  font-weight: 300;
+}
+
