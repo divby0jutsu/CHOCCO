@@ -58,7 +58,7 @@ const clear = () => {
     teamPhoto.height(0);} else {teamPhoto.height('auto')};
 }
 
-$(window).on('resize', ()=> { clear(); console.log($(this).width())});
+$(window).on('resize', ()=> clear());
 
 
 teamName.on('click', function() {
@@ -104,4 +104,64 @@ reviewAvatar.on("click", function(e) {
   review.eq(ndx).addClass("review__item--active");
 });
 
+
+
+////
+
+const deliveryForm = document.querySelector('#deliveryForm');
+const deliverySend = document.querySelector('#deliverySend');
+const message = document.querySelector('.message');
+const messageText = document.querySelector('.message__text');
+const messageClose = document.querySelector('.message__close-btn');
+
+const toggleMessage = () => {
+  message.classList.toggle("message--active");
+  body.classList.toggle("body--active");
+}
+
+
+deliverySend.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const nameField = deliveryForm.elements.name;
+  const phoneField = deliveryForm.elements.phone;
+  const commentField = deliveryForm.elements.comment;
+
+  const data = {
+    name: nameField.value,
+    phone: phoneField.value,
+    comment: commentField.value,
+    to: "name@ya.ru"
+  } 
+  const arr = [nameField, phoneField, commentField];
+
+  let checkResult = arr.filter(el => {
+    if (el.checkValidity()) { 
+      el.style.border = "3px solid transparent";
+      return el;
+    } else {el.style.border = "3px solid red";}
+  }); 
+
+  if (checkResult.length === arr.length) {
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.send(JSON.stringify(data));
+
+    xhr.addEventListener('load', () => {
+      messageText.innerText = xhr.response.message;
+      if (xhr.status > 400) {
+        messageText.classList.add("error");
+      } else {
+        messageText.classList.remove("error");
+      }
+      toggleMessage();
+    })
+  }
+});
+
+  messageClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleMessage()});
 

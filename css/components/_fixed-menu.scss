@@ -3,6 +3,10 @@
   top: 22%;
   right: 3%;
   z-index: $z-fixed-menu;
+  
+  @include tablets {
+    display: none;
+  }
 }
 
 .fixed-menu__item {
@@ -26,10 +30,6 @@
   border: pxToRem(1px) solid transparent;
   display: block;
   position: relative;
-
-  @include tablets {
-    display: none;
-  }
 
   &::after {
     content: "";
