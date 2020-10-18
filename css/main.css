@@ -259,11 +259,9 @@ img {
       color: #497870; }
   .btn--bg--green {
     background: #497870;
-    border-color: #497870;
     color: #FFF; }
     .btn--bg--green:hover {
       background: #365A49;
-      border-color: #365A49;
       color: #FFF; }
   .btn--bg--transparent {
     background: transparent;
@@ -272,6 +270,10 @@ img {
     text-transform: none; }
     .btn--bg--transparent:hover {
       color: #497870; }
+
+button:focus {
+  outline: none;
+  border: 3px solid #292929; }
 
 .section {
   height: 100vh;
@@ -417,7 +419,8 @@ img {
 .review__list {
   display: flex;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 280px; }
 
 .review {
   background-image: url("../img/decor/berries-drawing.png");
@@ -843,14 +846,14 @@ img {
   overflow: hidden;
   position: relative;
   margin-left: 26px; }
-
-.slider__list, .slider__item {
-  display: flex;
-  flex: 0 0 100%;
-  width: 100%; }
+  .slider__display .bx-wrapper {
+    border: none;
+    box-shadow: none;
+    background: transparent; }
 
 .slider__list {
-  justify-content: center;
+  display: flex;
+  width: 100%;
   align-items: center;
   position: absolute;
   transition-delay: 0.2s; }
@@ -858,9 +861,6 @@ img {
 .slider__item {
   padding: 2rem;
   transition: opacity 0.2s; }
-  @media screen and (max-width: 768px) {
-    .slider__item {
-      flex-direction: column; } }
 
 .slider__arrow {
   position: absolute;
@@ -873,19 +873,22 @@ img {
   .slider__arrow--right {
     right: 0; }
 
+.product__container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media screen and (max-width: 768px) {
+    .product__container {
+      flex-direction: column; } }
+
 @media screen and (max-width: 768px) {
   .product__ingredients {
     display: none; } }
 
 .product__img {
   flex: 1;
-  min-height: 100%;
   overflow: hidden;
   position: relative; }
-  @media screen and (max-width: 768px) {
-    .product__img {
-      width: 100%;
-      min-height: 50%; } }
   .product__img::before {
     content: "";
     background-image: url("../img/decor/product__leaf2.png");
@@ -1192,9 +1195,14 @@ img {
   background-color: #333537;
   z-index: 20; }
 
+.message {
+  display: none; }
+  .message.fancybox-content {
+    padding: 0 !important; }
+
 .message__body {
   background: #FFF;
-  padding: 37px 67px;
+  padding: 35px 60px;
   color: #000;
   display: flex;
   flex-direction: column;

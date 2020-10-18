@@ -1,3 +1,13 @@
+.product__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
 .product__ingredients {
 
   @include tablets {
@@ -6,14 +16,8 @@
 }
 .product__img {
   flex: 1;
-  min-height: 100%;
   overflow: hidden;
   position: relative;
-
-  @include tablets {
-    width: 100%;
-    min-height: 50%;
-  }
 
   &::before {
     content: "";

@@ -18,12 +18,10 @@
 
   &--bg--green {
     background: $green;
-    border-color: $green;
     color: #FFF;
     
     &:hover {
       background: $darkGreen;
-      border-color: $darkGreen;
       color: #FFF;
     }
   }
@@ -40,3 +38,8 @@
   }
 }
 
+button:focus {
+  outline: none;
+  border: 3px solid #292929;
+
+}
