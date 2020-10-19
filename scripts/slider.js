@@ -16,6 +16,8 @@
     slider.goToNextSlide();
   });
 
+setTimeout(slider.reloadSlider(), 1000);
+
 
 
 // const arrowLeft = document.getElementById("sliderArrowLeft");
