@@ -16,7 +16,12 @@
     slider.goToNextSlide();
   });
 
-setTimeout(slider.reloadSlider(), 1000);
+  $(window).on('load', function(){
+    setTimeout(slider.reloadSlider(), 1000);
+});
+
+  
+//setTimeout(slider.reloadSlider(), 1000);
 
 
 
