@@ -1147,7 +1147,8 @@ button:focus {
   font-weight: 700;
   color: #292929;
   margin-bottom: 0.44rem;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   .team-member__name::after {
     content: '';
     margin-left: 5px;

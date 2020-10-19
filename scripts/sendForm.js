@@ -53,6 +53,7 @@ deliveryForm.addEventListener('submit', e => {
         src: "#message",
         type: "inline"
       });
+      deliveryForm.reset();
     })
   }
 });

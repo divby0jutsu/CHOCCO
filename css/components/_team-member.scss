@@ -47,6 +47,7 @@
   color: #292929;
   margin-bottom: pxToRem(8px);
   position: relative;
+  cursor: pointer;
 
   &::after {
     content: '';
