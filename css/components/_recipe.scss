@@ -1,0 +1,78 @@
+.recipe {
+  display: flex;
+  
+}
+
+.recipe__title {
+  position: relative;
+  width: 100px;
+
+  @include mobiles {
+    width: 90px;
+  }
+}
+
+.recipe__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.recipe__name {
+  position: absolute;
+  white-space: nowrap;
+  right: 22px;
+  bottom: 29px;
+  transform: translate(50%) rotate(-90deg) translate(50%);
+  transform-origin: bottom;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+.recipe__content {
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.3s;
+  position: relative;
+}
+
+.recipe__desc {
+  padding: 30px 80px 30px 38px;
+}
+
+.recipe__close {
+  display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      
+
+      .close__icon {
+        fill: rgba(255, 255, 255, 0.7);
+        width: 20px;
+      height: 20px;
+      }
+}
+
+.recipe--active{
+
+  @include mobiles {
+  position: absolute;
+  width: 100vw;
+  z-index: 50;
+  }
+}
+
+.recipe--active .recipe__content {
+  width: 500px;
+  
+
+  @include tablets {
+    width: 100%;
+  }
+}
+

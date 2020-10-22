@@ -1,0 +1,22 @@
+.recipes {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/bg/recipes.png") center center/cover no-repeat ;
+  color: #FFF;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.recipes__title {
+  text-align: start;
+  color: #FFF;
+  margin-top: pxToRem(110px);
+}
+
+.recipes__list {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+

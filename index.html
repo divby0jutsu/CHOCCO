@@ -12,8 +12,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
     <link rel="stylesheet" href="./css/main.css" />
     <link
       rel="stylesheet"
@@ -183,7 +189,7 @@
               </a>
               <div class="slider__display">
                 <ul id="sliderRoot" class="slider__list">
-                  <li id='slide1' class="slider__item product">
+                  <li id="slide1" class="slider__item product">
                     <div class="product__container">
                       <div class="product__img">
                         <img
@@ -668,6 +674,97 @@
             </ul>
           </div>
         </section>
+        <section class="section recipes">
+          <div class="container">
+            <h2 class="section__title recipes__title">Меню</h2>
+          </div>
+          <ul class="recipes__list">
+            <li class="recipes__item recipe">
+              <a href="#" class="recipe__title">
+                <img
+                  src="./img/bg/recipes_coconut.png"
+                  alt=""
+                  class="recipe__img"
+                />
+                <div class="recipe__name">Батончики с молоком</div>
+              </a>
+              <div class="recipe__content">
+                <div class="recipe__desc">
+                  <p>
+                    Рекомендуем употреблять батончики вместе с кокосовым или
+                    миндальным молоком. Так и вкуснее, и полезнее. Ну чего ещё
+                    хотеть от жизни? Батончик – он твой лучший друг и радует
+                    всех вокруг. Как классно, что можно питаться полезно и
+                    вкусно, а не как попало. Бабуля, конечно, за такую еду не
+                    похвалит, но кто её будет спрашивать – никто. Надо бы,
+                    кстати, бабулю поздравить с днём Победы.
+                  </p>
+                </div>
+                <a href="#" class="recipe__close">
+                  <svg class="close__icon">
+                    <use xlink:href="./img/icons/sprite.svg#close"></use>
+                  </svg>
+                </a>
+              </div>
+            </li>
+            <li class="recipes__item recipe">
+              <a href="#" class="recipe__title">
+                <img
+                  src="./img/bg/recipes_tangerin.png"
+                  alt=""
+                  class="recipe__img"
+                />
+                <div class="recipe__name">С мёдом и фруктами</div>
+              </a>
+              <div class="recipe__content">
+                <div class="recipe__desc">
+                  <p>
+                    Рекомендуем употреблять батончики вместе с кокосовым или
+                    миндальным молоком. Так и вкуснее, и полезнее. Ну чего ещё
+                    хотеть от жизни? Батончик – он твой лучший друг и радует
+                    всех вокруг. Как классно, что можно питаться полезно и
+                    вкусно, а не как попало. Бабуля, конечно, за такую еду не
+                    похвалит, но кто её будет спрашивать – никто. Надо бы,
+                    кстати, бабулю поздравить с днём Победы.
+                  </p>
+                </div>
+                <a href="#" class="recipe__close">
+                  <svg class="close__icon">
+                    <use xlink:href="./img/icons/sprite.svg#close"></use>
+                  </svg>
+                </a>
+              </div>
+            </li>
+            <li class="recipes__item recipe">
+              <a href="#" class="recipe__title">
+                <img
+                  src="./img/bg/recipes_berries.png"
+                  alt=""
+                  class="recipe__img"
+                />
+                <div class="recipe__name">Дикие ягоды</div>
+              </a>
+              <div class="recipe__content">
+                <div class="recipe__desc">
+                  <p>
+                    Рекомендуем употреблять батончики вместе с кокосовым или
+                    миндальным молоком. Так и вкуснее, и полезнее. Ну чего ещё
+                    хотеть от жизни? Батончик – он твой лучший друг и радует
+                    всех вокруг. Как классно, что можно питаться полезно и
+                    вкусно, а не как попало. Бабуля, конечно, за такую еду не
+                    похвалит, но кто её будет спрашивать – никто. Надо бы,
+                    кстати, бабулю поздравить с днём Победы.
+                  </p>
+                </div>
+                <a href="#" class="recipe__close">
+                  <svg class="close__icon">
+                    <use xlink:href="./img/icons/sprite.svg#close"></use>
+                  </svg>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
         <section class="section reviews-section">
           <div class="container">
             <h2 class="section__title">Отзывы</h2>
@@ -780,17 +877,12 @@
               Закажите доставку
             </h2>
             <form action="" method="POST" class="form" id="deliveryForm">
-              <input type="hidden" name="to" value="name@ya.ru"/>
+              <input type="hidden" name="to" value="name@ya.ru" />
               <div class="form__col">
                 <div class="form__row">
                   <label class="form__block">
                     <div class="form__title">Имя</div>
-                    <input
-                      type="text"
-                      class="form__input"
-                      name="name"
-                      
-                    />
+                    <input type="text" class="form__input" name="name" />
                   </label>
                   <label class="form__block">
                     <div class="form__title">Телефон</div>
@@ -799,7 +891,6 @@
                       type="tel"
                       class="form__input"
                       name="phone"
-                      
                     />
                   </label>
                 </div>
@@ -837,7 +928,6 @@
                       name="comment"
                       cols="30"
                       rows="10"
-                      
                     ></textarea>
                   </label>
                 </div>
@@ -1013,10 +1103,12 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="./scripts/scroll.js"></script>
     <script src="./scripts/modal.js"></script>
     <script src="./scripts/slider.js"></script>
     <script src="./scripts/accordion.js"></script>
     <script src="./scripts/slideshow.js"></script>
     <script src="./scripts/sendForm.js"></script>
+    <script src="./scripts/accordionHz.js"></script>
   </body>
 </html>
