@@ -23,6 +23,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.body--active {
+  overflow: hidden; }
+
 ul, li {
   margin: 0;
   padding: 0; }
@@ -835,9 +838,6 @@ button:focus {
 .fullscreen-menu.fullscreen-menu--active {
   opacity: 1;
   left: 0; }
-
-.body--active {
-  overflow: hidden; }
 
 .slider__display {
   height: 100%;
