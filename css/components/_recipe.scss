@@ -26,8 +26,8 @@
   bottom: 29px;
   transform: translate(50%) rotate(-90deg) translate(50%);
   transform-origin: bottom;
-  font-size: 48px;
-  line-height: 48px;
+  font-size: pxToRem(48px);
+  line-height: pxToRem(48px);
   font-weight: 700;
 }
 
@@ -42,19 +42,29 @@
 
 .recipe__desc {
   padding: 30px 80px 30px 38px;
+  //width: 500px;
 }
+
+// .recipe__desc {
+//   width: 500px;
+//   overflow: hidden;
+  
+
+//   @include tablets {
+//     width: 100%;
+//   }}
 
 .recipe__close {
   display: block;
       position: absolute;
-      top: 20px;
+      top: 16px;
       right: 20px;
       
 
       .close__icon {
         fill: rgba(255, 255, 255, 0.7);
-        width: 20px;
-      height: 20px;
+        width: 16px;
+      height: 16px;
       }
 }
 
@@ -67,12 +77,15 @@
   }
 }
 
-.recipe--active .recipe__content {
-  width: 500px;
+// .recipe--active .recipe__content {  
+//   width: 500px;
+//   overflow: hidden;
   
 
-  @include tablets {
-    width: 100%;
-  }
-}
+//   @include tablets {
+//     width: 100%;
+//   }
+// }
+
+
 

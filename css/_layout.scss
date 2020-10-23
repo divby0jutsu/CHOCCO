@@ -77,6 +77,10 @@ img {
   overflow: hidden;
 }
 
+.maincontent {
+  height: 100%;
+}
+
 .container {
   width: 95%;
   max-width: pxToRem($containerWidth);
