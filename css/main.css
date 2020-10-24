@@ -57,6 +57,9 @@ img {
   display: block;
   max-width: 100%; }
 
+button, input[type=range] {
+  cursor: pointer; }
+
 .wrapper {
   position: relative;
   width: 100%;
@@ -278,8 +281,7 @@ img {
       color: #497870; }
 
 button:focus {
-  outline: none;
-  border: 3px solid #292929; }
+  outline: none; }
 
 .section {
   height: 100vh;
@@ -1308,5 +1310,182 @@ button:focus {
     position: absolute;
     width: 100vw;
     z-index: 50; } }
+
+.player-section {
+  position: relative; }
+  .player-section::after {
+    content: url("");
+    background-image: url("../../img/decor/blackberry_delivery.png");
+    background-size: 196px 264px;
+    width: 196px;
+    height: 264px;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    bottom: -100px; }
+    @media screen and (max-width: 768px) {
+      .player-section::after {
+        background-size: 109px 147px;
+        width: 109px;
+        height: 147px; } }
+
+.player__container {
+  display: flex;
+  justify-content: center; }
+
+.player {
+  width: 660px;
+  height: 405px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 100; }
+  @media screen and (max-width: 768px) {
+    .player {
+      width: 594px;
+      height: 352px; } }
+  @media screen and (max-width: 480px) {
+    .player {
+      width: 394px;
+      height: 234px; } }
+  .player::before {
+    content: "";
+    background-image: url("../img/decor/leaf1_video.png");
+    background-size: 4rem 7.5rem;
+    width: 4rem;
+    height: 7.5rem;
+    object-fit: cover;
+    position: absolute;
+    left: -18%;
+    bottom: -12%; }
+  .player::after {
+    content: "";
+    background-image: url("../img/decor/leaf2_video.png");
+    background-size: 5rem 4.28rem;
+    width: 5rem;
+    height: 4.28rem;
+    object-fit: cover;
+    position: absolute;
+    right: -5.62rem;
+    top: -4.5rem; }
+
+.player__wrapper {
+  height: 100%;
+  position: relative; }
+
+#playerVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; }
+
+.play__icon-wrapper {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.paused .play__icon-wrapper {
+  display: none; }
+
+.play__icon-pic {
+  width: 78px;
+  height: 110px;
+  fill: #fff; }
+  @media screen and (max-width: 480px) {
+    .play__icon-pic {
+      width: 45px;
+      height: 66px; } }
+
+.player__controls {
+  height: 35px;
+  width: 100%;
+  background-color: #404040;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0; }
+
+.player__start {
+  width: 0;
+  height: 16px;
+  border: 0;
+  background: transparent;
+  margin-left: 17px;
+  border-color: transparent transparent transparent #626262;
+  transition: 0.1s;
+  border-style: solid;
+  border-width: 8px 0 8px 11px;
+  padding: 0;
+  cursor: pointer; }
+  .player__start:focus {
+    outline: none; }
+
+.player__playback {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0 25px 0 16px; }
+
+.player__playback-range {
+  width: 446px; }
+  @media screen and (max-width: 768px) {
+    .player__playback-range {
+      flex: 1;
+      width: auto; } }
+
+.player__input-range {
+  height: 0.39rem;
+  border-radius: 1px;
+  background-color: #626262;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none; }
+
+.player__input-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #626262;
+  cursor: pointer;
+  width: 0.83rem;
+  height: 0.83rem;
+  border-radius: 50%; }
+  @media screen and (max-width: 480px) {
+    .player__input-range::-webkit-slider-thumb {
+      width: 9px;
+      height: 9px; } }
+
+.player__volume {
+  display: flex;
+  align-items: center;
+  margin-right: 1.22rem; }
+
+.volume__icon-wrapper {
+  display: flex;
+  align-items: center;
+  margin-right: 1.28rem;
+  cursor: pointer;
+  position: relative; }
+
+.muted .volume__icon-wrapper:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 1.44rem;
+  background-color: #626262;
+  box-shadow: 1px 1px #404040;
+  transform: translateX(360%) rotate(-45deg); }
+
+.volume__icon-pic {
+  width: 0.72rem;
+  height: 0.89rem;
+  fill: #626262; }
+
+.player__volume-range {
+  width: 60px; }
+
+.paused .player__start {
+  border-style: double;
+  border-width: 0 0 0 11px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -55,7 +55,7 @@ recipeTitle.on('click', function(e){
   
 });
 
-closeRecipe.on('click', (e) => {
+closeRecipe.on('click', e => {
   e.preventDefault();
   closeEl(allChildrenWithClss('.recipe'), 'recipe--active');
 });
