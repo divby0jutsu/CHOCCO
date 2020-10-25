@@ -1,4 +1,4 @@
-.recipes {
+.recipes-section {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/bg/recipes.png") center center/cover no-repeat ;
   color: #FFF;
   justify-content: flex-start;
@@ -9,6 +9,11 @@
   text-align: start;
   color: #FFF;
   margin-top: pxToRem(110px);
+
+  @include mobiles {
+    margin-top: 76px;
+    font-size: 40px;
+  }
 }
 
 .recipes__list {

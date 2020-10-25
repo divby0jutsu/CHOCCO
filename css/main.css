@@ -63,11 +63,13 @@ button, input[type=range] {
 .wrapper {
   position: relative;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   overflow: hidden; }
 
 .maincontent {
-  height: 100%; }
+  height: 100%;
+  transition: transform 0.8s ease-in;
+  will-change: transform; }
 
 .container {
   width: 95%;
@@ -76,7 +78,7 @@ button, input[type=range] {
   position: relative; }
 
 .hero {
-  height: 100vh;
+  height: 100%;
   min-height: 36.22rem;
   color: #fff;
   background: url("../img/decor/large-leaf.png") right bottom no-repeat, #61c4d9;
@@ -284,7 +286,7 @@ button:focus {
   outline: none; }
 
 .section {
-  height: 100vh;
+  height: 100%;
   min-height: 36.11rem;
   display: flex;
   flex-direction: column;
@@ -320,22 +322,22 @@ button:focus {
     .headline__title-text {
       width: 98%; } }
 
-.benefits {
+.benefits-section {
   position: relative;
   background-image: url("../img/decor/leaf-grey.png");
   background-size: 10.61rem 17.44rem;
   background-position: left top 57%;
   background-repeat: no-repeat; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    .benefits {
+    .benefits-section {
       background-image: url("../img/decor/leaf-greyx2.png"); } }
   @media screen and (max-width: 768px) {
-    .benefits {
+    .benefits-section {
       background-position: left top 17%; } }
   @media screen and (max-width: 480px) {
-    .benefits {
+    .benefits-section {
       background-image: none; } }
-  .benefits::before {
+  .benefits-section::before {
     content: "";
     background-image: url("../img/decor/raspberry.png");
     background-size: 8.94rem 17.5rem;
@@ -346,10 +348,10 @@ button:focus {
     bottom: -6.45rem;
     left: 0; }
     @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-      .benefits::before {
+      .benefits-section::before {
         background-image: url("../img/decor/raspberry2x.png"); } }
     @media screen and (max-width: 480px) {
-      .benefits::before {
+      .benefits-section::before {
         display: none; } }
 
 .benefits__list {
@@ -529,7 +531,7 @@ button:focus {
       .reviews-section::before {
         background-image: url("../img/decor/leaf-grey-2x2.png"); } }
   .reviews-section::after {
-    content: url("");
+    content: "";
     background-image: url("../img/decor/berries.png");
     background-size: 7.5rem 10.72rem;
     width: 7.5rem;
@@ -712,7 +714,7 @@ button:focus {
 .fixed-menu {
   position: fixed;
   top: 22%;
-  right: 3%;
+  right: 1%;
   z-index: 100; }
   @media screen and (max-width: 768px) {
     .fixed-menu {
@@ -743,6 +745,12 @@ button:focus {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+
+.fixed-menu--dark .fixed-menu__link::after {
+  background-color: #365A49; }
+
+.fixed-menu--dark .fixed-menu__item--active .fixed-menu__link {
+  border-color: #365A49; }
 
 .contacts-section {
   display: flex;
@@ -996,10 +1004,10 @@ button:focus {
   margin-right: 29px;
   white-space: nowrap; }
 
-.shop {
+.shop-section {
   background-color: #F8FAF9;
   position: relative; }
-  .shop::before {
+  .shop-section::before {
     content: "";
     background-image: url("../img/decor/grey_leaf_large.png");
     background-size: 10.89rem 25.17rem;
@@ -1011,11 +1019,11 @@ button:focus {
     right: 0;
     z-index: 0; }
     @media screen and (max-width: 768px) {
-      .shop::before {
+      .shop-section::before {
         background-size: 8.44rem 19.5rem;
         width: 8.44rem;
         height: 19.5rem; } }
-  .shop::after {
+  .shop-section::after {
     content: "";
     background-image: url("../img/decor/blueberries.png");
     background-size: 7.5rem 6.22rem;
@@ -1026,7 +1034,7 @@ button:focus {
     bottom: -10%;
     right: 0; }
     @media screen and (max-width: 768px) {
-      .shop::after {
+      .shop-section::after {
         background-size: 5.78rem 4.78rem;
         width: 5.78rem;
         height: 4.78rem; } }
@@ -1097,9 +1105,9 @@ button:focus {
 .ingredient__name {
   width: 125px; }
 
-.team {
+.team-section {
   position: relative; }
-  .team::after {
+  .team-section::after {
     content: "";
     background-image: url("../img/decor/raspberry__team.png");
     background-size: 5.78rem 6.33rem;
@@ -1238,7 +1246,7 @@ button:focus {
 .error {
   color: red; }
 
-.recipes {
+.recipes-section {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/bg/recipes.png") center center/cover no-repeat;
   color: #FFF;
   justify-content: flex-start;
@@ -1248,6 +1256,10 @@ button:focus {
   text-align: start;
   color: #FFF;
   margin-top: 6.11rem; }
+  @media screen and (max-width: 480px) {
+    .recipes__title {
+      margin-top: 76px;
+      font-size: 40px; } }
 
 .recipes__list {
   display: flex;
@@ -1314,7 +1326,7 @@ button:focus {
 .player-section {
   position: relative; }
   .player-section::after {
-    content: url("");
+    content: "";
     background-image: url("../../img/decor/blackberry_delivery.png");
     background-size: 196px 264px;
     width: 196px;

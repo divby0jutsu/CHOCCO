@@ -4,7 +4,7 @@ const init = () => {
   myMap = new ymaps.Map('map', {
     center: [55.748836, 37.599119],
     zoom: 13,
-    controls: []
+    controls: ['zoomControl']
   });
 
   myMap.behaviors.disable(['rightMouseButtonMagnifier', 'scrollZoom']);
