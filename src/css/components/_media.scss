@@ -1,0 +1,12 @@
+//functions
+
+@function pxToRem($pxValue: $baseFontSize) {
+	//font-size: $sizeValue + px;
+    $remValue: round(($pxValue / $baseFontSize)/0.01)*0.01 + 0rem;
+    @return $remValue;
+}
+
+
+
+
+
