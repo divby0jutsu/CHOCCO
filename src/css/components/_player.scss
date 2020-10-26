@@ -3,7 +3,7 @@
   
   &::after {
     content: "";
-    background-image: url("../../img/decor/blackberry_delivery.png");
+    background-image: url("./img/decor/blackberry_delivery.png");
     background-size: 196px 264px;
     width: 196px;
     height: 264px;
@@ -47,7 +47,7 @@
 
   &::before {
     content: "";
-    background-image: url("../img/decor/leaf1_video.png");
+    background-image: url("./img/decor/leaf1_video.png");
     background-size: pxToRem(72px) pxToRem(135px);
     width: pxToRem(72px);
     height: pxToRem(135px);
@@ -59,7 +59,7 @@
 
   &::after {
     content: "";
-    background-image: url("../img/decor/leaf2_video.png");
+    background-image: url("./img/decor/leaf2_video.png");
     background-size: pxToRem(90px) pxToRem(77px);
     width: pxToRem(90px);
     height: pxToRem(77px);

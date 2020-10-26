@@ -1,5 +1,5 @@
 .delivery-section {
-  background: url('../img/bg/berries-pattern.png') left top repeat;
+  background: url('./img/bg/berries-pattern.png') left top repeat;
   position: relative;
 
   @include tablets {
@@ -10,7 +10,7 @@
 
   &::before {
     content: "";
-    background-image: url("../img/decor/blueberry.png");
+    background-image: url("./img/decor/blueberry.png");
     background-size: pxToRem(47px) pxToRem(48px);
     width: pxToRem(47px);
     height: pxToRem(48px);
@@ -20,13 +20,13 @@
     bottom: 10%;
 
     @include retina {
-      background-image: url("../img/decor/blueberry2x.png");
+      background-image: url("./img/decor/blueberry2x.png");
     }
   }
 
   &::after {
     content: "";
-    background-image: url("../img/decor/leaf.png");
+    background-image: url("./img/decor/leaf.png");
     background-size: pxToRem(135px) pxToRem(188px);
     width: pxToRem(135px);
     height: pxToRem(188px);
@@ -36,7 +36,7 @@
     bottom: 10%;
 
     @include retina {
-      background-image: url("../img/decor/leafx2.png");
+      background-image: url("./img/decor/leafx2.png");
     }
   }
 }

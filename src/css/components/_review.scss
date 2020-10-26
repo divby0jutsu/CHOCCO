@@ -5,7 +5,7 @@
   min-height: 280px;
 }
 .review {
-  background-image: url("../img/decor/berries-drawing.png");
+  background-image: url("./img/decor/berries-drawing.png");
   background-size: pxToRem(127px) pxToRem(167px); 
   background-position: right top 5%; 
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@
   opacity: 0;
 
   @include retina {
-    background-image: url("../img/decor/berries-drawing2x.png");
+    background-image: url("./img/decor/berries-drawing2x.png");
   }
 
   @include tablets {

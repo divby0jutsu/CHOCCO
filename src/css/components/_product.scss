@@ -34,7 +34,7 @@
 
   &::before {
     content: "";
-    background-image: url("../img/decor/product__leaf2.png");
+    background-image: url("./img/decor/product__leaf2.png");
     background-size: pxToRem(75px) pxToRem(92px);
     width: pxToRem(75px);
     height: pxToRem(92px);
@@ -56,7 +56,7 @@
 
   &::after {
     content: "";
-    background-image: url("../img/decor/product__leaf1.png");
+    background-image: url("./img/decor/product__leaf1.png");
     background-size: pxToRem(99px) pxToRem(73px);
     width: pxToRem(99px);
     height: pxToRem(73px);

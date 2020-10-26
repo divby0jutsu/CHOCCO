@@ -4,7 +4,7 @@
 
   &::before {
     content: "";
-    background-image: url("../img/decor/grey_leaf_large.png");
+    background-image: url("./img/decor/grey_leaf_large.png");
     background-size: pxToRem(196px) pxToRem(453px);
     width: pxToRem(196px);
     height: pxToRem(453px);
@@ -23,7 +23,7 @@
 
   &::after {
     content: "";
-    background-image: url("../img/decor/blueberries.png");
+    background-image: url("./img/decor/blueberries.png");
     background-size: pxToRem(135px) pxToRem(112px);
     width: pxToRem(135px);
     height: pxToRem(112px);

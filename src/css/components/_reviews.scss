@@ -11,7 +11,7 @@
 
   &::before {
     content: "";
-      background-image: url("../img/decor/leaf-grey-2.png");
+      background-image: url("./img/decor/leaf-grey-2.png");
       background-size: pxToRem(102px) pxToRem(321px);
       width: pxToRem(102px);
       height: pxToRem(321px);
@@ -21,13 +21,13 @@
       bottom: pxToRem(-166px);
 
       @include retina {
-        background-image: url("../img/decor/leaf-grey-2x2.png");
+        background-image: url("./img/decor/leaf-grey-2x2.png");
       }
   }
 
   &::after {
     content: "";
-    background-image: url("../img/decor/berries.png");
+    background-image: url("./img/decor/berries.png");
     background-size: pxToRem(135px) pxToRem(193px);
     width: pxToRem(135px);
     height: pxToRem(193px);
@@ -37,7 +37,7 @@
     bottom: pxToRem(-90px);
 
     @include retina {
-      background-image: url("../img/decor/berries2x.png");
+      background-image: url("./img/decor/berries2x.png");
     }
   }
 

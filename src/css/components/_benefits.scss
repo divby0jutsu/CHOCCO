@@ -1,6 +1,6 @@
 .benefits-section {
   position: relative;
-  background-image: url("../img/decor/leaf-grey.png");
+  background-image: url("./img/decor/leaf-grey.png");
   background-size: pxToRem(191px) pxToRem(314px);
   background-position: left top 57%; 
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 
   &::before {
     content: "";
-    background-image: url("../img/decor/raspberry.png");
+    background-image: url("./img/decor/raspberry.png");
     background-size: pxToRem(161px) pxToRem(315px);
     width: pxToRem(161px);
     height: pxToRem(315px);
@@ -29,7 +29,7 @@
     left: 0;
 
     @include retina {
-      background-image: url("../img/decor/raspberry2x.png");
+      background-image: url("./img/decor/raspberry2x.png");
     }
 
     @include mobiles {
@@ -74,7 +74,7 @@
   }
   
   &::before {
-    content: url("../img/decor/separator.png");
+    content: url("./img/decor/separator.png");
     position: absolute;
     top: 20%;
     right: 0;
