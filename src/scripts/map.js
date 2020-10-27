@@ -31,6 +31,9 @@ const init = () => {
   myMap.geoObjects.add(myCollection);
 };
 
-ymaps.ready(init);
+setTimeout(() => {
+  ymaps.ready(init);
+}, 2500);
+
 })()
 
