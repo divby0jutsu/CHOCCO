@@ -5,9 +5,11 @@
   overflow: hidden;
   border: pxToRem(4px) solid transparent;
   position: relative;
+  
 
   &--active, &:hover {
-    border-color: #365A49;
+    background-color: #365A49;
+    
   }
 }
 
@@ -22,7 +24,7 @@
 
 .interactive-avatar__pic {
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
 }
