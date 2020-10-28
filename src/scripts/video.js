@@ -1,44 +1,40 @@
-(function() {
+setTimeout(function() {
   $().ready(function () {
     const playButtons = $('.play__button');
     const playerContainer = $('.player');
     const video = document.getElementById('playerVideo');
-    const playbackControl = document.getElementById('playbackRange');
+    //const playbackControl = document.getElementById('playbackRange');
     const volumeControl = document.getElementById('volumeRange');
     const soundControl = $('.volume__icon-wrapper');
     let intervalId;
-  
-    playbackControl.min = 0;
-    playbackControl.value = 0;
+    const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+var playback = document.getElementById('playbackRange');
+
+    playback.min = 0;
+    playback.value = 0;
+    playback.max = 100;
     volumeControl.min = 0;
     volumeControl.max = 10;
   
-    const updateDuration = () => {
-      playbackControl.value = video.currentTime;
-    };
   
     const setVideoDuration = () => {
-      video.currentTime = playbackControl.value;
+      video.currentTime = (playback.value/100) * video.duration;
       intervalId = setInterval(() => {
         updateDuration();
       }, 1000/66);
     };
-  
-    const stopInterval = () => {
+
+    const updateDuration = () => {
+      playback.value = (video.currentTime/video.duration)*100;
+      console.log(playback.value);
+      };
+
+      const stopInterval = () => {
       clearInterval(intervalId);
     }
   
-    const changeSoundVolume = () => {
-      video.volume = volumeControl.value/10;
-    };
-  
-    const toggleSound = () => {
-      video.volume ? video.volume = 0 : video.volume = volumeControl.value/10;
-      playerContainer.toggleClass('muted');
-    };
-  
     const playPauseVideo = () => {
-      playbackControl.max = video.duration;
      
       if(video.paused) {
         video.play();
@@ -50,6 +46,7 @@
         video.pause();
         playerContainer.removeClass('paused');
         stopInterval();
+        console.log('stopped interval');
       }
     };
   
@@ -57,7 +54,43 @@
       playerContainer.removeClass('paused');
         stopInterval();
         video.load();
-        updateDuration();
+        playback.value = 0;
+    };
+
+    function iosPolyfill(e) {
+ 
+      var val = (e.pageX - playback.getBoundingClientRect().left) /
+       (playback.getBoundingClientRect().right - playback.getBoundingClientRect().left),max = 100,segment = 1 / (max - 1),segmentArr = [];
+    
+      max++;
+    
+      for (var i = 0; i < max; i++) {
+        segmentArr.push(segment * i);
+      }
+    
+      var segCopy = segmentArr.slice(),
+      ind = segmentArr.sort((a, b) => Math.abs(val - a) - Math.abs(val - b) )[0];
+    
+      playback.value = segCopy.indexOf(ind) + 1;
+    
+        video.currentTime = (playback.value/100) * video.duration;
+        console.log(video.currentTime, video.duration);
+        //video.currentTime = (playback.value/video.duration) * 100;
+        console.log(video.currentTime);
+        intervalId = setInterval(() => {
+          updateDuration();
+        }, 1000/66);
+    
+        
+    };
+
+    const changeSoundVolume = () => {
+      video.volume = volumeControl.value/10;
+    };
+  
+    const toggleSound = () => {
+      video.volume ? video.volume = 0 : video.volume = volumeControl.value/10;
+      playerContainer.toggleClass('muted');
     };
   
    
@@ -76,11 +109,23 @@
     video.addEventListener('ended', () => {
       resetVideo();
     });
+
+    
   
-    playbackControl.addEventListener('click', setVideoDuration);
-    playbackControl.addEventListener('onmousemove', setVideoDuration);
-    playbackControl.addEventListener('mousedown', stopInterval);
-  
+    playback.addEventListener('click', iosPolyfill);
+    playback.addEventListener('mousedown', e =>{console.log('ill stop'); stopInterval()});
+
+
+
+if (!!navigator.platform.match(/iPhone|iPod|iPad/)) {
+  playback.addEventListener("touchend", iosPolyfill, {passive: true});
+}
+
+if (isMobile && !navigator.platform.match(/iPhone|iPod|iPad/)) {
+  playback.addEventListener('touchstart', stopInterval);
+  playback.addEventListener("touchend", setVideoDuration);
+}  
+
     volumeControl.addEventListener('click', changeSoundVolume);
     volumeControl.addEventListener('mousemove', changeSoundVolume);
     soundControl.on('click', toggleSound);
@@ -89,7 +134,7 @@
   
   
   
-})()
+}, 2000);
 
 
 

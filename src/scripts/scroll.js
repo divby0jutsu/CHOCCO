@@ -132,12 +132,12 @@ $('.wrapper').on('touchmove', e => {e.preventDefault()});
     //Generic swipe handler for all directions
     swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
       const scrollMethods = viewportScroller();
-      let scrollDirection = '';
+      let scrollDirection;
 
-      if (direction === 'down') {scrollDirection = 'prev'};
-      if (direction === 'up') {scrollDirection = 'next'};
+      if (direction === 'down') {scrollDirection = 'prev'; scrollMethods[scrollDirection](); };
+      if (direction === 'up') {scrollDirection = 'next'; scrollMethods[scrollDirection](); };
       
-      scrollMethods[scrollDirection](); 
+      //scrollMethods[scrollDirection](); 
     }
   });
   //Set some options later
