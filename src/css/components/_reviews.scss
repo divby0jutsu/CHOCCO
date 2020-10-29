@@ -1,12 +1,12 @@
 .reviews-section {
-  background-image: url("../img/decor/strawberry.png");
+  background-image: url("./img/decor/strawberry.png");
   background-size: pxToRem(136px) pxToRem(78px);
   background-position: right 4% top 8%;
   background-repeat: no-repeat;
   position: relative;
 
   @include retina {
-    background-image: url("../img/decor/strawberry2x.png");
+    background-image: url("./img/decor/strawberry2x.png");
   }
 
   &::before {

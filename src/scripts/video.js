@@ -1,145 +1,186 @@
-setTimeout(function() {
+setTimeout(function () {
   $().ready(function () {
-    const playButtons = $('.play__button');
-    const playerContainer = $('.player');
-    const video = document.getElementById('playerVideo');
-    //const playbackControl = document.getElementById('playbackRange');
-    const volumeControl = document.getElementById('volumeRange');
-    const soundControl = $('.volume__icon-wrapper');
-    let intervalId;
+    const playButtons = $(".play__button");
+    const playerContainer = $(".player");
+    const video = document.getElementById("playerVideo");
+    const volumeControl = document.getElementById("volumeRange");
+    const soundControl = $(".volume__icon-wrapper");
     const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = mobileDetect.mobile();
-var playback = document.getElementById('playbackRange');
+    const isMobile = mobileDetect.mobile();
+    const playback = document.getElementById("playbackRange");
+    let intervalId;
 
     playback.min = 0;
     playback.value = 0;
     playback.max = 100;
     volumeControl.min = 0;
     volumeControl.max = 10;
-  
-  
+    volumeControl.value = 5;
+
     const setVideoDuration = () => {
-      video.currentTime = (playback.value/100) * video.duration;
+      video.currentTime = (playback.value / 100) * video.duration;
       intervalId = setInterval(() => {
         updateDuration();
-      }, 1000/66);
+      }, 1000 / 66);
     };
 
     const updateDuration = () => {
-      playback.value = (video.currentTime/video.duration)*100;
-      console.log(playback.value);
-      };
+      playback.value = (video.currentTime / video.duration) * 100;
+    };
 
-      const stopInterval = () => {
+    const stopInterval = () => {
       clearInterval(intervalId);
-    }
-  
+    };
+
     const playPauseVideo = () => {
-     
-      if(video.paused) {
+      if (video.paused) {
         video.play();
-        playerContainer.addClass('paused');
+        playerContainer.addClass("paused");
         intervalId = setInterval(() => {
           updateDuration();
         }, 1000);
       } else {
         video.pause();
-        playerContainer.removeClass('paused');
+        playerContainer.removeClass("paused");
         stopInterval();
-        console.log('stopped interval');
+        //console.log('stopped interval');
       }
-    };
-  
-    const resetVideo = () => {
-      playerContainer.removeClass('paused');
-        stopInterval();
-        video.load();
-        playback.value = 0;
     };
 
-    function iosPolyfill(e) {
- 
-      var val = (e.pageX - playback.getBoundingClientRect().left) /
-       (playback.getBoundingClientRect().right - playback.getBoundingClientRect().left),max = 100,segment = 1 / (max - 1),segmentArr = [];
-    
-      max++;
-    
-      for (var i = 0; i < max; i++) {
-        segmentArr.push(segment * i);
-      }
-    
-      var segCopy = segmentArr.slice(),
-      ind = segmentArr.sort((a, b) => Math.abs(val - a) - Math.abs(val - b) )[0];
-    
-      playback.value = segCopy.indexOf(ind) + 1;
-    
-        video.currentTime = (playback.value/100) * video.duration;
-        console.log(video.currentTime, video.duration);
-        //video.currentTime = (playback.value/video.duration) * 100;
-        console.log(video.currentTime);
-        intervalId = setInterval(() => {
-          updateDuration();
-        }, 1000/66);
-    
-        
+    const resetVideo = () => {
+      playerContainer.removeClass("paused");
+      stopInterval();
+      video.load();
+      playback.value = 0;
     };
 
     const changeSoundVolume = () => {
-      video.volume = volumeControl.value/10;
+      if (!playerContainer.hasClass("muted")) {
+        video.volume = volumeControl.value / 10;
+      }
     };
-  
+
     const toggleSound = () => {
-      video.volume ? video.volume = 0 : video.volume = volumeControl.value/10;
-      playerContainer.toggleClass('muted');
+      video.volume
+        ? (video.volume = 0)
+        : (video.volume = volumeControl.value / 10);
+      playerContainer.toggleClass("muted");
     };
-  
-   
-  
-    playButtons.each(function ()  {
-      $(this).on('click', (e)=>{
+
+    //polyfill for iOS and desktop playback slider
+
+    const iosDesktopPolyfill = (e) => {
+      let val =
+          (e.pageX - playback.getBoundingClientRect().left) /
+          (playback.getBoundingClientRect().right -
+            playback.getBoundingClientRect().left),
+        max = 100,
+        segment = 1 / (max - 1),
+        segmentArr = [];
+
+      max++;
+
+      for (let i = 0; i < max; i++) {
+        segmentArr.push(segment * i);
+      }
+
+      let segCopy = segmentArr.slice(),
+        ind = segmentArr.sort(
+          (a, b) => Math.abs(val - a) - Math.abs(val - b)
+        )[0];
+
+      playback.value = segCopy.indexOf(ind) + 1;
+      video.currentTime = (playback.value / 100) * video.duration;
+      console.log(video.currentTime, video.duration);
+      console.log(video.currentTime);
+      intervalId = setInterval(() => {
+        updateDuration();
+      }, 1000 / 66);
+    };
+
+    //polyfill for iOS volume slider
+    const iosVolPolyfill = (e) => {
+      alert("ipad");
+
+      let val =
+          (e.pageX - volumeControl.getBoundingClientRect().left) /
+          (volumeControl.getBoundingClientRect().right -
+            volumeControl.getBoundingClientRect().left),
+        max = 10,
+        segment = 1 / (max - 1),
+        segmentArr = [];
+
+      max++;
+
+      for (let i = 0; i < max; i++) {
+        segmentArr.push(segment * i);
+      }
+
+      let segCopy = segmentArr.slice(),
+        ind = segmentArr.sort(
+          (a, b) => Math.abs(val - a) - Math.abs(val - b)
+        )[0];
+
+      volumeControl.value = segCopy.indexOf(ind) + 1;
+      console.log(volumeControl.value);
+      if (!playerContainer.hasClass("muted")) {
+        video.volume = volumeControl.value / 10;
+        console.log(video.volume);
+      }
+      // intervalId = setInterval(() => {
+      //   updateDuration();
+      // }, 1000/66);
+    };
+
+
+
+    //Event listeners
+
+    playButtons.each(function () {
+      $(this).on("click", (e) => {
         e.preventDefault();
         playPauseVideo();
       });
     });
-  
-    video.addEventListener('click', () =>{
+
+    video.addEventListener("click", () => {
       playPauseVideo();
     });
-  
-    video.addEventListener('ended', () => {
+
+    video.addEventListener("ended", () => {
       resetVideo();
     });
 
-    
-  
-    playback.addEventListener('click', iosPolyfill);
-    playback.addEventListener('mousedown', e =>{console.log('ill stop'); stopInterval()});
+    playback.addEventListener("click", iosDesktopPolyfill);
+    playback.addEventListener("mousedown", (e) => {
+      console.log("ill stop");
+      stopInterval();
+    });
+    volumeControl.addEventListener("click", changeSoundVolume);
+    volumeControl.addEventListener("mousemove", changeSoundVolume);
+    soundControl.on("click", toggleSound);
+    //soundControl.on("touchend", toggleSound);
 
 
+    //event listeners for iOS devices
+    if (!!navigator.platform.match(/iPhone|iPod|iPad/)) {
+      playback.addEventListener("touchend", iosDesktopPolyfill, {
+        passive: true,
+      });
+      volumeControl.addEventListener("touchend", iosVolPolyfill, {
+        passive: true,
+      });
+    }
 
-if (!!navigator.platform.match(/iPhone|iPod|iPad/)) {
-  playback.addEventListener("touchend", iosPolyfill, {passive: true});
-}
-
-if (isMobile && !navigator.platform.match(/iPhone|iPod|iPad/)) {
-  playback.addEventListener('touchstart', stopInterval);
-  playback.addEventListener("touchend", setVideoDuration);
-}  
-
-    volumeControl.addEventListener('click', changeSoundVolume);
-    volumeControl.addEventListener('mousemove', changeSoundVolume);
-    soundControl.on('click', toggleSound);
-  
+    //event listeners for other mobile devices
+    if (isMobile && !navigator.platform.match(/iPhone|iPod|iPad/)) {
+      playback.addEventListener("touchstart", stopInterval);
+      playback.addEventListener("touchend", setVideoDuration);
+      volumeControl.addEventListener("touchend", changeSoundVolume);
+      soundControl.on("touchend", toggleSound);
+    }
   });
-  
-  
-  
 }, 2000);
-
-
-
-
-
 
 /*  YT IFrame API */
 
@@ -182,7 +223,7 @@ if (isMobile && !navigator.platform.match(/iPhone|iPod|iPad/)) {
 //   const estDuration = $('.player__duration-estimate');
 //   const completedDuration = $('.player__duration-completed');
 //   const durationSec = player.getDuration();
-  
+
 //   durationSec ? estDuration.text(formatTime(durationSec)): estDuration.text('00:00');
 
 //   if(typeof interval !== 'undefined') {
@@ -210,9 +251,8 @@ if (isMobile && !navigator.platform.match(/iPhone|iPod|iPad/)) {
 //     console.log(newCompletedTime);
 //     player.seekTo(newCompletedTime, true);
 //   })
-  
-// };
 
+// };
 
 // const onPlayerStateChange = e => {
 // /* Possible values are:
@@ -236,7 +276,6 @@ if (isMobile && !navigator.platform.match(/iPhone|iPod|iPad/)) {
 //    }
 // };
 
- 
 // function onYouTubeIframeAPIReady() {
 //  player = new YT.Player("yt-player", {
 //    height: "405",
