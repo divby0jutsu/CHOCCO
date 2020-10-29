@@ -136,12 +136,8 @@ $('.wrapper').on('touchmove', e => {e.preventDefault()});
 
       if (direction === 'down') {scrollDirection = 'prev'; scrollMethods[scrollDirection](); };
       if (direction === 'up') {scrollDirection = 'next'; scrollMethods[scrollDirection](); };
-      
-      //scrollMethods[scrollDirection](); 
     }
   });
-  //Set some options later
-  //$("#test").swipe( {fingers:2} );
 };
 
 

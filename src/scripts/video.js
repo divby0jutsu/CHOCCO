@@ -43,7 +43,6 @@ setTimeout(function () {
         video.pause();
         playerContainer.removeClass("paused");
         stopInterval();
-        //console.log('stopped interval');
       }
     };
 
@@ -91,8 +90,6 @@ setTimeout(function () {
 
       playback.value = segCopy.indexOf(ind) + 1;
       video.currentTime = (playback.value / 100) * video.duration;
-      console.log(video.currentTime, video.duration);
-      console.log(video.currentTime);
       intervalId = setInterval(() => {
         updateDuration();
       }, 1000 / 66);
@@ -100,8 +97,6 @@ setTimeout(function () {
 
     //polyfill for iOS volume slider
     const iosVolPolyfill = (e) => {
-      alert("ipad");
-
       let val =
           (e.pageX - volumeControl.getBoundingClientRect().left) /
           (volumeControl.getBoundingClientRect().right -
@@ -122,14 +117,9 @@ setTimeout(function () {
         )[0];
 
       volumeControl.value = segCopy.indexOf(ind) + 1;
-      console.log(volumeControl.value);
       if (!playerContainer.hasClass("muted")) {
         video.volume = volumeControl.value / 10;
-        console.log(video.volume);
       }
-      // intervalId = setInterval(() => {
-      //   updateDuration();
-      // }, 1000/66);
     };
 
 
@@ -151,17 +141,6 @@ setTimeout(function () {
       resetVideo();
     });
 
-    playback.addEventListener("click", iosDesktopPolyfill);
-    playback.addEventListener("mousedown", (e) => {
-      console.log("ill stop");
-      stopInterval();
-    });
-    volumeControl.addEventListener("click", changeSoundVolume);
-    volumeControl.addEventListener("mousemove", changeSoundVolume);
-    soundControl.on("click", toggleSound);
-    //soundControl.on("touchend", toggleSound);
-
-
     //event listeners for iOS devices
     if (!!navigator.platform.match(/iPhone|iPod|iPad/)) {
       playback.addEventListener("touchend", iosDesktopPolyfill, {
@@ -177,8 +156,19 @@ setTimeout(function () {
       playback.addEventListener("touchstart", stopInterval);
       playback.addEventListener("touchend", setVideoDuration);
       volumeControl.addEventListener("touchend", changeSoundVolume);
-      soundControl.on("touchend", toggleSound);
     }
+
+    playback.addEventListener("click", iosDesktopPolyfill);
+    playback.addEventListener("mousedown", (e) => {
+      stopInterval();
+    });
+    volumeControl.addEventListener("click", changeSoundVolume);
+    volumeControl.addEventListener("mousemove", changeSoundVolume);
+    soundControl.on("click", toggleSound);
+    //soundControl.on("touchend", toggleSound);
+
+
+    
   });
 }, 2000);
 
